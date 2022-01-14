@@ -1,0 +1,296 @@
+<GUIItems>
+
+	<!--
+		Colours
+		Cream = f0e3cc
+		Dark Grey 80% Opacity = 0c0b0b80
+		Dark Grey =  0c0b0b
+		Solid Orange = f97b03
+	-->
+
+	<!-- 
+		Fluffy_Credits_Controller is the Main Helper, Like the vanilla files, if this is Hidden it closes the Credits and returns to the main menu
+		It would need to be written as 2 different instances to be openable while in game and on the menu.
+
+		But it's a Credits menu you ain't opening this mid game :p
+		Also its a lot of extra work to do that, since I would have to add a whole new method to open and close the menu
+	-->
+
+    <Item name="Fluffy_Credits_Controller" hidden="true">
+	    <OnOpen>
+            <Action type="Hide" target="Menu_Main"/>
+	    	<Action type="Show" target="Fluffy_Credits_Main"/>
+	    </OnOpen>
+
+	    <OnClose>
+            <Action type="Show" target="Menu_Main"/>
+	    	<Action type="Hide" target="Fluffy_Credits_Main"/>
+	    </OnClose>
+    </Item>
+
+	<!-- This is just the Main screen so it can be collapsed in case of additional menus -->
+    <Item name="Fluffy_Credits_Main" hidden="true">
+        <OnKeyDown key0="27">
+	    	<Action type="Click" target="Fluffy_Credits_Back"/>
+	    </OnKeyDown>
+
+		<OnOpen>
+	    	<Action type="TriggerEvent" target="GUI_CAPTURE_INPUT"/>
+	    </OnOpen>
+
+	    <OnClose>
+	    	<Action type="TriggerEvent" target="GUI_RELEASE_INPUT"/>
+	    </OnClose>
+ 
+	    <StaticImage origin="0 0">
+	    	<RenderObject2D texture="data/textures/gui/square.tga" sizeX="99999" sizeY="99999" color="0c0b0b"/>
+	    </StaticImage>
+
+	    <StaticImage origin="0 0">
+	    	<RenderObject2D texture="data/textures/gui/bg_texture.dds" sizeX="7680" color="f0e3cc26" sizeY="1920" texRepeatX="3" texRepeatY="1"/>
+	    </StaticImage>
+
+	    <StaticImage origin="0 0">
+	    	<RenderObject2D texture="data/textures/gui/square.tga" sizeX="2560" sizeY="9999" color="0c0b0bbf"/>
+	    	<StaticImage align="l" origin="-128 0">
+	    		<RenderObject2D texture="data/textures/gui/bg_edge.tga" flipX="true" />
+	    	</StaticImage>
+	    	<StaticImage align="r" origin="128 0">
+	    		<RenderObject2D texture="data/textures/gui/bg_edge.tga" flipY="true" />
+	    	</StaticImage>
+	    </StaticImage>
+
+		<!-- Actual Menu Screen for Origin Things -->
+		<Item name="Fluffy_Credits_Screen">
+
+			<!-- 
+			Yellow Square in the Center to see Origin 
+			
+			<StaticImage origin="0 0">
+	    		<RenderObject2D texture="data/textures/gui/square.tga" sizeX="50" sizeY="50" color="ffc000"/>
+	    	</StaticImage>
+			-->
+
+			<!-- 
+				This is where the Elements for the Background are left, This includes the Back and Original Credits Button
+				Its Seperated for the List of Authors and the Main Section for the Bio's
+			 -->
+			<Item name="Fluffy_Credits_Background">
+				
+				<Item name="Backdrop List" origin="-900 0">
+					<StaticImage>
+	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="350" sizeY="1000" color="0c0b0bbf"/>
+	    			</StaticImage>
+					
+					<StaticImage origin="0 500" align="t">
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="350" sizeY="80" color="f97b03"/>
+					</StaticImage>
+
+					<StaticImage origin="0 -500" align="b">
+	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="350" sizeY="80" color="0c0b0bbf"/>
+	    			</StaticImage>
+
+					<StaticText name="Fluffy_Author_List" origin="0 495" text="MOD AUTHORS" align="tc" font="Fluffy_Header_3" textColor="201f1b"/>
+
+					<!-- Back to Main Menu Button-->>
+					<Button name="Fluffy_Credits_Back" align="b" origin="0 -490">
+						<ButtonText align="" origin="0 0" text="@menu_generic_back" font="Fluffy_Header_3" textColor="f0e3cc"/>
+						<RenderObject2D texture="data/textures/gui/deploy/deploy_squad.dds" sizeX="280" sizeY="60" color="211e1d00" flipX="false"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/deploy/deploy_squad.dds" sizeX="280" sizeY="60" color="f0e3cc" flipX="false"/>
+							<ButtonText align="" origin="0 0" text="@menu_generic_back" font="Fluffy_Header_3" textColor="211e1d"/>
+						</OnHover>
+						<OnClick>
+							<RenderObject2D texture="data/textures/gui/deploy/deploy_squad.dds" color="40392b" flipX="false"/>
+							<Action type="Hide" target="Fluffy_Credits_Controller"/>
+						</OnClick>
+					</Button>
+				</Item>
+
+				<Item name="Backdrop Main" origin="-700 0">
+					
+					<StaticImage align="l">
+	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1500" sizeY="1000" color="0c0b0bbf"/> <!--0c0b0bbf  0c0b0b80-->
+	    			</StaticImage>
+					<StaticImage origin="0 -500" align="lb">
+	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1500" sizeY="80" color="0c0b0bbf"/> <!--0c0b0bbf  0c0b0b80-->
+	    			</StaticImage>
+
+					<!-- 
+						Button to go to the Killhouse Credits, Please Don't Remove this
+						I put this here because I feel it was the right thing to do
+					-->
+					<Button name="Fluffy_GoTo_Real_Credits" align="lb" origin="30 -490" hidden="False" tooltip="Original Killhouse Games Credits">
+						<ButtonText text="ORIGINAL CREDITS" font="Fluffy_Header_3" textColor="f0e3cc"/>
+						<RenderObject2D texture="data/textures/gui/deploy/deploy_squad.dds" sizeX="420" sizeY="60" color="211e1d00" flipX="false"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/deploy/deploy_squad.dds" sizeX="420" sizeY="60" color="f0e3cc" flipX="false"/>
+							<ButtonText text="ORIGINAL CREDITS" font="Fluffy_Header_3" textColor="211e1d"/>
+						</OnHover>
+						<OnClick>
+							<RenderObject2D texture="data/textures/gui/deploy/deploy_squad.dds" color="40392b" flipX="false"/>
+							<Action type="Hide" target="Fluffy_Credits_Controller"/>
+							<Action type="Show" target="Menu_Credits_Main"/>
+						</OnClick>
+					</Button>
+				</Item>
+			</Item>
+
+			<!-- Contains the Bio for the Mod when Authors are not Hovered -->
+			<Item name="Fluffy_Mod_Bio" hidden="false" origin="-700 0">
+				
+				<!-- Main Helper for UI Origin -->
+				<StaticImage align="lt" origin="0 500">
+	    			<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1500" sizeY="920" color="f0e3cc40"/> <!-- 0c0b0bbf  0c0b0b80 -->
+	    		</StaticImage>
+				
+				<!-- Item for the Mod Bio Header, Name and Top Bar -->
+				<Item name="Fluffy_Mod_Header">
+					<StaticImage  align="lt" origin="0 500">
+	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1500" sizeY="80" color="f97b03"/> <!-- 0c0b0bbf  0c0b0b80 -->
+	    			</StaticImage>
+
+					<StaticText name="Fluffy_Mod_Name" text="Put Your Mod Title Here" align="tc" origin="750 505" font="Fluffy_Header_2" textColor="201f1b"/>
+
+					<Button name="Discord" align="lb" origin="1420 -493">
+						<RenderObject2D texture="data/textures/gui/social_discord.dds" color="f0e3cc80"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/social_discord.dds" color="f0e3cc"/>
+						</OnHover>
+						<OnClick>
+							<RenderObject2D texture="data/textures/gui/social_discord.dds" color="f0e3cc" scaleX="0.9" scaleY="0.9"/>
+							<Action type="OpenURL" target="https://www.youtube.com/watch?v=dQw4w9WgXcQ"/>
+						</OnClick>
+					</Button>
+				</Item>
+			</Item>
+
+
+			<!-- Contains All the Mod Authors Entries -->
+			<Item name="Fluffy_Author_List" hidden="false" origin="-900 350">
+				
+				<Item name="Fluffy_Bio1" origin="0 40" align="t">
+					<Button >
+						<!--<RenderObject2D texture="data/textures/gui/deploy/deploy_squad.dds" sizeX="310" sizeY="60" color="f97b0340"/>-->
+						<ButtonText align="" origin="0 0" text="Fluffy" font="Fluffy_Description_3" textColor="f0e3cc"/>
+						<OnHover>
+							<!--<RenderObject2D texture="data/textures/gui/deploy/deploy_squad.dds" sizeX="310" sizeY="60" color="f97b0390"/>-->
+							<ButtonText align="" origin="0 0" text="Fluffy" font="Fluffy_Description_3" textColor="f97b0390"/>
+							<Action type="Show" target="Fluffy_Bio1_Main"/>
+							<Action type="Hide" target="Fluffy_Mod_Bio"/>
+						</OnHover>
+						<OnHoverEnd>
+							<Action type="Hide" target="Fluffy_Bio1_Main"/>
+							<Action type="Show" target="Fluffy_Mod_Bio"/>
+						</OnHoverEnd>
+					</Button>
+
+				</Item>
+
+				<Item name="Fluffy_Bio2" origin="0 -20" align="t">
+					<Button>
+						<!--<RenderObject2D texture="data/textures/gui/deploy/deploy_squad.dds" sizeX="310" sizeY="60" color="f97b0340"/>-->
+						<ButtonText align="" origin="0 0" text="Person1" font="Fluffy_Description_3" textColor="f0e3cc"/>
+						<OnHover>
+							<!--<RenderObject2D texture="data/textures/gui/deploy/deploy_squad.dds" sizeX="310" sizeY="60" color="f97b0390"/>-->
+							<ButtonText align="" origin="0 0" text="Person1" font="Fluffy_Description_3" textColor="f97b0390"/>
+							<Action type="Show" target="Fluffy_Bio2_Main"/>
+							<Action type="Hide" target="Fluffy_Mod_Bio"/>
+						</OnHover>
+						<OnHoverEnd>
+							<Action type="Hide" target="Fluffy_Bio2_Main"/>
+							<Action type="Show" target="Fluffy_Mod_Bio"/>
+						</OnHoverEnd>
+
+					</Button>
+				</Item>
+
+				<Item name="Fluffy_Bio3" origin="0 -80" align="t">
+					<Button>
+						<!--<RenderObject2D texture="data/textures/gui/deploy/deploy_squad.dds" sizeX="310" sizeY="60" color="f97b0340"/>-->
+						<ButtonText align="" origin="0 0" text="Person2" font="Fluffy_Description_3" textColor="f0e3cc"/>
+						<OnHover>
+							<!--<RenderObject2D texture="data/textures/gui/deploy/deploy_squad.dds" sizeX="310" sizeY="60" color="f97b0390"/>-->
+							<ButtonText align="" origin="0 0" text="Person2" font="Fluffy_Description_3" textColor="f97b0390"/>
+							<Action type="Show" target="Fluffy_Bio3_Main"/>
+							<Action type="Hide" target="Fluffy_Mod_Bio"/>
+						</OnHover>
+						<OnHoverEnd>
+							<Action type="Hide" target="Fluffy_Bio3_Main"/>
+							<Action type="Show" target="Fluffy_Mod_Bio"/>
+						</OnHoverEnd>
+					</Button>
+				</Item>
+
+				<Item name="Fluffy_Bio4" origin="0 -140" align="t">
+					<Button>
+						<!--<RenderObject2D texture="data/textures/gui/deploy/deploy_squad.dds" sizeX="310" sizeY="60" color="f97b0340"/>-->
+						<ButtonText align="" origin="0 0" text="Person3" font="Fluffy_Description_3" textColor="f0e3cc"/>
+						<OnHover>
+							<!--<RenderObject2D texture="data/textures/gui/deploy/deploy_squad.dds" sizeX="310" sizeY="60" color="f97b0390"/>-->
+							<ButtonText align="" origin="0 0" text="Person3" font="Fluffy_Description_3" textColor="f97b0390"/>
+							<Action type="Show" target="Fluffy_Bio4_Main"/>
+							<Action type="Hide" target="Fluffy_Mod_Bio"/>
+						</OnHover>
+						<OnHoverEnd>
+							<Action type="Hide" target="Fluffy_Bio4_Main"/>
+							<Action type="Show" target="Fluffy_Mod_Bio"/>
+						</OnHoverEnd>
+					</Button>
+				</Item>
+
+				<Item name="Fluffy_Bio5" origin="0 -200" align="t">
+					<Button>
+						<!--<RenderObject2D texture="data/textures/gui/deploy/deploy_squad.dds" sizeX="310" sizeY="60" color="f97b0340"/>-->
+						<ButtonText align="" origin="0 0" text="Person4" font="Fluffy_Description_3" textColor="f0e3cc"/>
+						<OnHover>
+							<!--<RenderObject2D texture="data/textures/gui/deploy/deploy_squad.dds" sizeX="310" sizeY="60" color="f97b0390"/>-->
+							<ButtonText align="" origin="0 0" text="Person4" font="Fluffy_Description_3" textColor="f97b0390"/>
+							<Action type="Show" target="Fluffy_Bio5_Main"/>
+							<Action type="Hide" target="Fluffy_Mod_Bio"/>
+						</OnHover>
+						<OnHoverEnd>
+							<Action type="Hide" target="Fluffy_Bio5_Main"/>
+							<Action type="Show" target="Fluffy_Mod_Bio"/>
+						</OnHoverEnd>
+					</Button>
+				</Item>
+
+			</Item>
+
+			<!-- Contains the actual Elements put into the Bio -->
+			<Item name="Fluffy_Bio_List_Main" hidden="false" align="l" origin="-700 0">
+
+				<Item name="Fluffy_Bio1_Main" hidden="true">
+					<StaticImage align="lt" origin="0 500">
+	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="200" sizeY="200" color="c90076"/>
+	    			</StaticImage>
+				</Item>
+
+				<Item name="Fluffy_Bio2_Main" hidden="true">
+					<StaticImage align="lt" origin="0 500">
+	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="200" sizeY="200" color="4fea0c"/>
+	    			</StaticImage>
+				</Item>
+
+				<Item name="Fluffy_Bio3_Main" hidden="true">
+					<StaticImage align="lt" origin="0 500">
+	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="200" sizeY="200" color="cc0000"/>
+	    			</StaticImage>
+				</Item>
+
+				<Item name="Fluffy_Bio4_Main" hidden="true">
+					<StaticImage align="lt" origin="0 500">
+	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="200" sizeY="200" color="2986cc"/>
+	    			</StaticImage>
+				</Item>
+
+				<Item name="Fluffy_Bio5_Main" hidden="true">
+					<StaticImage align="lt" origin="0 500">
+	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="200" sizeY="200" color="38761d"/>
+	    			</StaticImage>
+				</Item>
+			</Item>		
+		</Item>
+    </Item>
+</GUIItems>
