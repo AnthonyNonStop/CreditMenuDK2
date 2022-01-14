@@ -136,7 +136,7 @@
 						</OnClick>
 					</Button>
 
-					<Button name="Discord" align="lb" origin="1420 -493">
+					<Button name="Discord" align="lb" origin="1420 -493" tooltip="Modding Discord?">
 						<RenderObject2D texture="data/textures/gui/social_discord.dds" color="f0e3cc80"/>
 						<OnHover>
 							<RenderObject2D texture="data/textures/gui/social_discord.dds" color="f0e3cc"/>
@@ -147,7 +147,30 @@
 						</OnClick>
 					</Button>
 
+					<!--
+						This is my Own Credit on the Credit menu, Confusing I know.
+						I have a button down the bottom for me instead
+					-->
+
 					<Item name="Fluffy_Credits_Maker">
+						<Button name="Fluffy_Credits_Button" align="lb" origin="1100 -495" hidden="False" tooltip="Maker of this Credits Menu">
+							<ButtonText text="Who is Fluffy?" font="FF_Header_3" textColor="f0e3cc"/>
+							<OnHover>
+								<ButtonText align="" origin="0 0" text="Who is Fluffy?" font="FF_Header_3" textColor="f97b0390"/>
+								<Action type="Show" target="Fluffy_Credit_Maker_Bio"/>
+								<Action type="Hide" target="FF_Mod_Bio"/>
+							</OnHover>
+							<OnHoverEnd>
+								<Action type="Hide" target="Fluffy_Credit_Maker_Bio"/>
+								<Action type="Show" target="FF_Mod_Bio"/>
+							</OnHoverEnd>
+						</Button>
+
+						<Item name="Fluffy_Credit_Maker_Bio" hidden="true">
+							<StaticImage align="lt" origin="0 500">
+	    						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="200" sizeY="200" color="c90076"/>
+	    					</StaticImage>
+						</Item>
 					</Item>
 				</Item>
 			</Item>
@@ -174,128 +197,54 @@
 			<!-- Contains All the Mod Authors Entries -->
 			<Item name="FF_Author_List" hidden="false" origin="-900 350">
 				
-				<!-- 
-					I added myself to a separate Button on the bottom of the UI.
-					It felt weird to ask for my Name to be included into the main list even though I made these Credits.
-					So Instead I will just put a button you can hover instead for me, that way people won't confuse me for an actual contributer.
-
-					FF_Credit_Maker_Bio && FF_Credit_Maker_Main
-					Are my own Entries please don't edit them without Permission.
-				-->
-				<Item name="FF_Credit_Maker_Bio" origin="0 40" align="t">
-					<Button >
-						<ButtonText align="" origin="0 0" text="Who made this?" font="FF_Description_3" textColor="f0e3cc"/>
-						<OnHover>
-							<ButtonText align="" origin="0 0" text="Who made this?" font="FF_Description_3" textColor="f97b0390"/>
-							<Action type="Show" target="FF_Bio1_Main"/>
-							<Action type="Hide" target="FF_Mod_Bio"/>
-						</OnHover>
-						<OnHoverEnd>
-							<Action type="Hide" target="FF_Bio1_Main"/>
-							<Action type="Show" target="FF_Mod_Bio"/>
-						</OnHoverEnd>
-					</Button>
-
-				</Item>
-
 				<!--
 					So here is where I will be making the template easy to edit and copy paste
 
 				-->
 
-				<Item name="FF_Template_Bio" origin="0 -20" align="t">
+				<Item name="FF_Template_Author1" origin="0 30" align="t">
 					<Button>
-						<ButtonText align="" origin="0 0" text="Person1" font="FF_Description_3" textColor="f0e3cc"/>
+						<ButtonText align="" origin="0 0" text="TemplatePerson1" font="FF_Description_3" textColor="f0e3cc"/>
 						<OnHover>
-							<ButtonText align="" origin="0 0" text="Person1" font="FF_Description_3" textColor="f97b0390"/>
-							<Action type="Show" target="FF_Bio2_Main"/>
+							<ButtonText align="" origin="0 0" text="TemplatePerson1" font="FF_Description_3" textColor="f97b0390"/>
+							<Action type="Show" target="FF_Template_Bio1"/>
 							<Action type="Hide" target="FF_Mod_Bio"/>
 						</OnHover>
 						<OnHoverEnd>
-							<Action type="Hide" target="FF_Bio2_Main"/>
-							<Action type="Show" target="FF_Mod_Bio"/>
-						</OnHoverEnd>
-
-					</Button>
-				</Item>
-
-				<Item name="FF_Bio3" origin="0 -80" align="t">
-					<Button>
-						<ButtonText align="" origin="0 0" text="Person2" font="FF_Description_3" textColor="f0e3cc"/>
-						<OnHover>
-							<ButtonText align="" origin="0 0" text="Person2" font="FF_Description_3" textColor="f97b0390"/>
-							<Action type="Show" target="FF_Bio3_Main"/>
-							<Action type="Hide" target="FF_Mod_Bio"/>
-						</OnHover>
-						<OnHoverEnd>
-							<Action type="Hide" target="FF_Bio3_Main"/>
+							<Action type="Hide" target="FF_Template_Bio1"/>
 							<Action type="Show" target="FF_Mod_Bio"/>
 						</OnHoverEnd>
 					</Button>
 				</Item>
 
-				<Item name="FF_Bio4" origin="0 -140" align="t">
+				<Item name="FF_Template_Author2" origin="0 -30" align="t">
 					<Button>
-						<ButtonText align="" origin="0 0" text="Person3" font="FF_Description_3" textColor="f0e3cc"/>
+						<ButtonText align="" origin="0 0" text="TemplatePerson2" font="FF_Description_3" textColor="f0e3cc"/>
 						<OnHover>
-							<ButtonText align="" origin="0 0" text="Person3" font="FF_Description_3" textColor="f97b0390"/>
-							<Action type="Show" target="FF_Bio4_Main"/>
+							<ButtonText align="" origin="0 0" text="TemplatePerson2" font="FF_Description_3" textColor="f97b0390"/>
+							<Action type="Show" target="FF_Template_Bio2"/>
 							<Action type="Hide" target="FF_Mod_Bio"/>
 						</OnHover>
 						<OnHoverEnd>
-							<Action type="Hide" target="FF_Bio4_Main"/>
+							<Action type="Hide" target="FF_Template_Bio2"/>
 							<Action type="Show" target="FF_Mod_Bio"/>
 						</OnHoverEnd>
 					</Button>
 				</Item>
-
-				<Item name="FF_Bio5" origin="0 -200" align="t">
-					<Button>
-						<ButtonText align="" origin="0 0" text="Person4" font="FF_Description_3" textColor="f0e3cc"/>
-						<OnHover>
-							<ButtonText align="" origin="0 0" text="Person4" font="FF_Description_3" textColor="f97b0390"/>
-							<Action type="Show" target="FF_Bio5_Main"/>
-							<Action type="Hide" target="FF_Mod_Bio"/>
-						</OnHover>
-						<OnHoverEnd>
-							<Action type="Hide" target="FF_Bio5_Main"/>
-							<Action type="Show" target="FF_Mod_Bio"/>
-						</OnHoverEnd>
-					</Button>
-				</Item>
-
 			</Item>
 
 			<!-- Contains the actual Elements put into the Bio -->
-			<Item name="FF_Bio_List_Main" hidden="false" align="l" origin="-700 0">
+			<Item name="FF_Bio_List" hidden="false" align="l" origin="-700 0">
 
-				<Item name="FF_Bio1_Main" hidden="true">
+				<Item name="FF_Template_Bio1" hidden="true">
 					<StaticImage align="lt" origin="0 500">
 	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="200" sizeY="200" color="c90076"/>
 	    			</StaticImage>
 				</Item>
 
-				<Item name="FF_Bio2_Main" hidden="true">
+				<Item name="FF_Template_Bio2" hidden="true">
 					<StaticImage align="lt" origin="0 500">
 	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="200" sizeY="200" color="4fea0c"/>
-	    			</StaticImage>
-				</Item>
-
-				<Item name="FF_Bio3_Main" hidden="true">
-					<StaticImage align="lt" origin="0 500">
-	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="200" sizeY="200" color="cc0000"/>
-	    			</StaticImage>
-				</Item>
-
-				<Item name="FF_Bio4_Main" hidden="true">
-					<StaticImage align="lt" origin="0 500">
-	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="200" sizeY="200" color="2986cc"/>
-	    			</StaticImage>
-				</Item>
-
-				<Item name="FF_Bio5_Main" hidden="true">
-					<StaticImage align="lt" origin="0 500">
-	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="200" sizeY="200" color="38761d"/>
 	    			</StaticImage>
 				</Item>
 			</Item>		
