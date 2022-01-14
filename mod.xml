@@ -9,8 +9,8 @@
 "languageMod" should only be valid if this adds a new language to the game, in which case it will show up in the Languages options list
 -->
 <Mod
-	title="MenuTestMod"
-	description="Just some Menu Testing"
+	title="FluffyModMakerCredits"
+	description="Credits Menu for Mod Makers"
 	image=""
 	author="Fluffy"
 	tags=""	
