@@ -1,13 +1,13 @@
 <Fonts>
-	<Font name="Fluffy_Description_1" type="hybrid" size="20" file="data/fonts/NotoSans-Medium.ttf"/>
-	<Font name="Fluffy_Description_2" type="hybrid" size="30" file="data/fonts/NotoSans-Medium.ttf"/>
-	<Font name="Fluffy_Description_3" type="hybrid" size="40" file="data/fonts/NotoSans-Medium.ttf"/>
-    <Font name="Fluffy_Description_4" type="hybrid" size="70" file="data/fonts/NotoSans-Medium.ttf"/>
+	<Font name="FF_Description_1" type="hybrid" size="20" file="data/fonts/NotoSans-Medium.ttf"/>
+	<Font name="FF_Description_2" type="hybrid" size="30" file="data/fonts/NotoSans-Medium.ttf"/>
+	<Font name="FF_Description_3" type="hybrid" size="40" file="data/fonts/NotoSans-Medium.ttf"/>
+    <Font name="FF_Description_4" type="hybrid" size="70" file="data/fonts/NotoSans-Medium.ttf"/>
 	
-	<Font name="Fluffy_Header_6" type="hybrid" size="20" file="data/fonts/bebasneuepro-bold.ttf"/>		
-	<Font name="Fluffy_Header_5" type="hybrid" size="30" file="data/fonts/bebasneuepro-bold.ttf"/>	
-	<Font name="Fluffy_Header_4" type="hybrid" size="36" file="data/fonts/bebasneuepro-bold.ttf"/>	
-	<Font name="Fluffy_Header_3" type="hybrid" size="64" file="data/fonts/bebasneuepro-bold.ttf"/>		
-	<Font name="Fluffy_Header_2" type="hybrid" size="80" file="data/fonts/bebasneuepro-bold.ttf"/>
-	<Font name="Fluffy_Header_1" type="hybrid" size="160" file="data/fonts/bebasneuepro-bold.ttf"/>	
+	<Font name="FF_Header_6" type="hybrid" size="20" file="data/fonts/bebasneuepro-bold.ttf"/>		
+	<Font name="FF_Header_5" type="hybrid" size="30" file="data/fonts/bebasneuepro-bold.ttf"/>	
+	<Font name="FF_Header_4" type="hybrid" size="36" file="data/fonts/bebasneuepro-bold.ttf"/>	
+	<Font name="FF_Header_3" type="hybrid" size="64" file="data/fonts/bebasneuepro-bold.ttf"/>		
+	<Font name="FF_Header_2" type="hybrid" size="80" file="data/fonts/bebasneuepro-bold.ttf"/>
+	<Font name="FF_Header_1" type="hybrid" size="160" file="data/fonts/bebasneuepro-bold.ttf"/>	
 </Fonts>

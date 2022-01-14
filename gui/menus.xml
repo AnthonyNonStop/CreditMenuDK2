@@ -598,7 +598,7 @@
 			</OnHover>
 			<OnClick>
 				<RenderObject2D texture="data/textures/gui/menu_options_hover.dds" scaleX="0.95" scaleY="0.95" blendMode="none"/>
-				<Action type="Show" target="Fluffy_Credits_Controller"/>
+				<Action type="Show" target="FF_Credits_Controller"/>
 			</OnClick>
 		</Button>
 
