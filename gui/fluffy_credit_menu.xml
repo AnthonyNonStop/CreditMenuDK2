@@ -5,6 +5,7 @@
 		Cream = f0e3cc
 		Dark Grey 80% Opacity = 0c0b0b80
 		Dark Grey =  0c0b0b
+		Black Backdrop = 0c0b0bbf
 		Solid Orange = f97b03
 	-->
 
@@ -111,7 +112,7 @@
 
 				<Item name="Backdrop Main" origin="-700 0">
 					
-					<StaticImage align="l">
+					<StaticImage align="l" hidden="true">
 	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1500" sizeY="1000" color="0c0b0bbf"/> <!--0c0b0bbf  0c0b0b80-->
 	    			</StaticImage>
 					<StaticImage origin="0 -500" align="lb">
@@ -153,10 +154,10 @@
 					-->
 
 					<Item name="Fluffy_Credits_Maker">
-						<Button name="Fluffy_Credits_Button" align="lb" origin="1100 -495" hidden="False">
-							<ButtonText text="Who is Fluffy?" font="FF_Header_3" textColor="f0e3cc"/>
+						<Button name="Fluffy_Credits_Button" align="lb" origin="1000 -495" hidden="False" >
+							<ButtonText text="Who made this menu" font="FF_Header_3" textColor="f0e3cc"/>
 							<OnHover>
-								<ButtonText align="" origin="0 0" text="Who is Fluffy?" font="FF_Header_3" textColor="f97b0390"/>
+								<ButtonText align="" origin="0 0" text="Fluffy did" font="FF_Header_3" textColor="f97b0390"/>
 								<Action type="Show" target="Fluffy_Credit_Maker_Bio"/>
 								<Action type="Hide" target="FF_Mod_Bio"/>
 							</OnHover>
@@ -168,20 +169,40 @@
 
 						<Item name="Fluffy_Credit_Maker_Bio" hidden="true">
 							<Item name="Fluffy_Personal">
+								<!-- Grey Box for the Item itself -->
+								<StaticImage align="lt" origin="0 500">
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="350" sizeY="290" color="0c0b0bbf"/>
+	    						</StaticImage>
+
+								<!-- Header Orange Bar and Text -->
+								<StaticImage align="lt" origin="0 500">
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="350" sizeY="80" color="f97b03"/>
+	    						</StaticImage>
+								<StaticText origin="25 500" text="Name and Role" align="lt" font="FF_Header_3" textColor="0c0b0b"/>
+								
+								<!-- Name Followed by Roles -->
+								<StaticText origin="20 410" text="Fluffy" align="lt" font="FF_Header_3" textColor="f0e3cc"/>
+								<StaticText origin="20 330" text="Design" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
+								<StaticText origin="20 290" text="Programming" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
 							</Item>
 
-							<Item name="Fluffy_Contact">
+							<Item name="Fluffy_Contact" hidden="true">
+								<StaticImage align="lt" origin="100 500">
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="50" sizeY="50" color="f97b03"/>
+	    						</StaticImage>
 							</Item>
 
-							<Item name="Fluffy_Contribution">
+							<Item name="Fluffy_Contribution" hidden="true">
+								<StaticImage align="lt" origin="200 500">
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="50" sizeY="50" color="f97b03"/>
+	    						</StaticImage>
 							</Item>
 
-							<Item name="Fluffy_WorkExample">
+							<Item name="Fluffy_WorkExample" hidden="true">
+								<StaticImage align="lt" origin="300 500">
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="50" sizeY="50" color="f97b03"/>
+	    						</StaticImage>
 							</Item>
-							
-							<StaticImage align="lt" origin="0 500">
-	    						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="200" sizeY="200" color="c90076"/>
-	    					</StaticImage>
 						</Item>
 					</Item>
 				</Item>
