@@ -7,6 +7,8 @@
 		Dark Grey =  0c0b0b
 		Black Backdrop = 0c0b0bbf
 		Solid Orange = f97b03
+		Header Grey = 201f1b
+		Debug Pink I use this to figure what element it is visually = c90076
 	-->
 
 	<!-- 
@@ -112,11 +114,22 @@
 
 				<Item name="Backdrop Main" origin="-700 0">
 					
+					<!-- Unused at the moment, but Its a grey Backdrop for the Main Element -->
 					<StaticImage align="l" hidden="true">
 	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1500" sizeY="1000" color="0c0b0bbf"/> <!--0c0b0bbf  0c0b0b80-->
 	    			</StaticImage>
+
+					<!-- These Two are indentical it just doubles up the Bottom Bar -->
 					<StaticImage origin="0 -500" align="lb">
 	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1500" sizeY="80" color="0c0b0bbf"/> <!--0c0b0bbf  0c0b0b80-->
+	    			</StaticImage>
+					<StaticImage origin="0 -500" align="lb">
+	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1500" sizeY="80" color="0c0b0bbf"/> <!--0c0b0bbf  0c0b0b80-->
+	    			</StaticImage>
+
+					<!-- Why is this Here? I'm Hiding it for now -->
+					<StaticImage align="lt" origin="0 500" hidden="true">
+	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="80" color="f97b03"/>
 	    			</StaticImage>
 
 					<!-- 
@@ -140,7 +153,7 @@
 					<Button name="Discord" align="lb" origin="1420 -493" tooltip="Modding Discord?">
 						<RenderObject2D texture="data/textures/gui/social_discord.dds" color="f0e3cc80"/>
 						<OnHover>
-							<RenderObject2D texture="data/textures/gui/social_discord.dds" color="f0e3cc"/>
+							<RenderObject2D texture="data/textures/gui/social_discord.dds" color="f97b03"/> <!--f97b03 f0e3cc-->
 						</OnHover>
 						<OnClick>
 							<RenderObject2D texture="data/textures/gui/social_discord.dds" color="f0e3cc" scaleX="0.9" scaleY="0.9"/>
@@ -154,10 +167,10 @@
 					-->
 
 					<Item name="Fluffy_Credits_Maker">
-						<Button name="Fluffy_Credits_Button" align="lb" origin="1000 -495" hidden="False" >
+						<Button name="Fluffy_Credits_Button" align="lb" origin="1000 -495" hidden="False">
 							<ButtonText text="Who made this menu" font="FF_Header_3" textColor="f0e3cc"/>
 							<OnHover>
-								<ButtonText align="" origin="0 0" text="Fluffy did" font="FF_Header_3" textColor="f97b0390"/>
+								<ButtonText align="" origin="0 0" text="Who made this menu" font="FF_Header_3" textColor="f97b0390"/>
 								<Action type="Show" target="Fluffy_Credit_Maker_Bio"/>
 								<Action type="Hide" target="FF_Mod_Bio"/>
 							</OnHover>
@@ -168,28 +181,85 @@
 						</Button>
 
 						<Item name="Fluffy_Credit_Maker_Bio" hidden="true">
-							<Item name="Fluffy_Personal">
+							
+							<!-- Top Orange Header for the Whole Bio -->
+							<StaticImage align="lt" origin="0 500">
+	    						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1500" sizeY="80" color="f97b03"/>
+	    					</StaticImage>
+							<StaticText origin="750 505" text="AUTHOR BIO" align="t" font="FF_Header_2" textColor="201f1b"/>
+							
+							<Item name="Fluffy_Personal" origin="0 420">
+		
 								<!-- Grey Box for the Item itself -->
-								<StaticImage align="lt" origin="0 500">
-	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="350" sizeY="290" color="0c0b0bbf"/>
+								<!--
+									Size Y will need to be changed based on the Amount of Roles the Person had
+									In Ascending Order.
+									sizeY="270" 1
+									sizeY="330" 2
+									sizeY="390" 3
+									sizeY="450" 4
+								-->
+								<StaticImage align="lt">
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="330" color="0c0b0b80"/>
 	    						</StaticImage>
 
-								<!-- Header Orange Bar and Text -->
-								<StaticImage align="lt" origin="0 500">
-	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="350" sizeY="80" color="f97b03"/>
-	    						</StaticImage>
-								<StaticText origin="25 500" text="Name and Role" align="lt" font="FF_Header_3" textColor="0c0b0b"/>
+								<!-- Pretty Much this Whole Section is the Checker Pattern that Alternates including the Text for the Headers-->
 								
-								<!-- Name Followed by Roles -->
-								<StaticText origin="20 410" text="Fluffy" align="lt" font="FF_Header_3" textColor="f0e3cc"/>
-								<StaticText origin="20 330" text="Design" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
-								<StaticText origin="20 290" text="Programming" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
+								<!--Name Header Followed by Name-->
+								<StaticImage align="lt">
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="70" color="0c0b0b80"/>
+	    						</StaticImage>
+								<StaticText origin="10 0" text="Name" align="lt" font="FF_Header_3" textColor="f97b03"/>
+
+								<StaticImage align="lt" origin="0 -70">
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="70" color="201f1b"/>
+	    						</StaticImage>
+								<StaticText origin="10 -70" text="Fluffy" align="lt" font="FF_Description_4" textColor="f0e3cc"/>
+
+								<!-- Role Header Followed by Role(s) -->
+								<StaticImage align="lt" origin="0 -140">
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="70" color="0c0b0b80"/>
+	    						</StaticImage>
+								<StaticText origin="10 -140" text="Roles" align="lt" font="FF_Header_3" textColor="f97b03"/>
+
+								<!-- Role 1 -->
+								<StaticImage align="lt" origin="0 -210">
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="60" color="201f1b"/>
+	    						</StaticImage>
+								<StaticText origin="10 -210" text="Programming" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
+
+								<!-- Role 2 -->
+								<StaticImage align="lt" origin="0 -270">
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="60" color="0c0b0b80"/>
+	    						</StaticImage>
+								<StaticText origin="10 -270" text="Design" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
+								
+								<!-- Role 3 -->
+								<!--
+								<StaticImage align="lt" origin="0 -330">
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="60" color="201f1b"/>
+	    						</StaticImage>
+								<StaticText origin="10 -330" text="3" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
+								-->
+
+								<!-- Role 4 -->
+								<!--
+								<StaticImage align="lt" origin="0 -390">
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="60" color="0c0b0b80"/>
+	    						</StaticImage>
+								<StaticText origin="10 -390" text="4" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
+								-->
+								
 							</Item>
 
 							<Item name="Fluffy_Contact" hidden="true">
-								<StaticImage align="lt" origin="100 500">
-	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="50" sizeY="50" color="f97b03"/>
+								
+								<StaticImage align="lt" origin="0 130">
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="340" color="0c0b0bbf"/> <!--0c0b0bbf-->
 	    						</StaticImage>
+
+								<StaticText origin="60 125" text="NAME AND ROLE" align="lt" font="FF_Header_3" textColor="201f1b"/>
+								
 							</Item>
 
 							<Item name="Fluffy_Contribution" hidden="true">
