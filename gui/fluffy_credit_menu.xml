@@ -185,8 +185,8 @@
 							<!-- Top Orange Header for the Whole Bio -->
 							<StaticImage align="lt" origin="0 500">
 	    						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1500" sizeY="80" color="f97b03"/>
+								<StaticText origin="0 5" text="AUTHOR BIO" align="t" font="FF_Header_2" textColor="201f1b"/>
 	    					</StaticImage>
-							<StaticText origin="750 505" text="AUTHOR BIO" align="t" font="FF_Header_2" textColor="201f1b"/>
 							
 							<Item name="Fluffy_Personal" origin="0 420">
 		
@@ -208,46 +208,46 @@
 								<!--Name Header Followed by Name-->
 								<StaticImage align="lt">
 	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="70" color="0c0b0b80"/>
+									<StaticText origin="12 0" text="Name" align="lt" font="FF_Header_3" textColor="f97b03"/>
 	    						</StaticImage>
-								<StaticText origin="10 0" text="Name" align="lt" font="FF_Header_3" textColor="f97b03"/>
 
 								<StaticImage align="lt" origin="0 -70">
 	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="70" color="201f1b"/>
+									<StaticText origin="10 0" text="Fluffy" align="lt" font="FF_Description_4" textColor="f0e3cc"/>
 	    						</StaticImage>
-								<StaticText origin="10 -70" text="Fluffy" align="lt" font="FF_Description_4" textColor="f0e3cc"/>
 
 								<!-- Role Header Followed by Role(s) -->
 								<StaticImage align="lt" origin="0 -140">
 	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="70" color="0c0b0b80"/>
+									<StaticText origin="12 0" text="Roles" align="lt" font="FF_Header_3" textColor="f97b03"/>
 	    						</StaticImage>
-								<StaticText origin="10 -140" text="Roles" align="lt" font="FF_Header_3" textColor="f97b03"/>
 
 								<!-- Role 1 -->
 								<StaticImage align="lt" origin="0 -210">
 	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="60" color="201f1b"/>
+									<StaticText origin="10 0" text="Programming" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
 	    						</StaticImage>
-								<StaticText origin="10 -210" text="Programming" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
 
 								<!-- Role 2 -->
 								<StaticImage align="lt" origin="0 -270">
 	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="60" color="0c0b0b80"/>
+									<StaticText origin="10 0" text="Design" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
 	    						</StaticImage>
-								<StaticText origin="10 -270" text="Design" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
 								
 								<!-- Role 3 -->
 								<!--
 								<StaticImage align="lt" origin="0 -330">
 	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="60" color="201f1b"/>
+									<StaticText origin="10 0" text="3" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
 	    						</StaticImage>
-								<StaticText origin="10 -330" text="3" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
 								-->
 
 								<!-- Role 4 -->
 								<!--
 								<StaticImage align="lt" origin="0 -390">
 	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="60" color="0c0b0b80"/>
+									<StaticText origin="10 0" text="4" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
 	    						</StaticImage>
-								<StaticText origin="10 -390" text="4" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
 								-->
 								
 							</Item>
