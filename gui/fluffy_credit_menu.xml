@@ -205,12 +205,13 @@
 
 								<!-- Pretty Much this Whole Section is the Checker Pattern that Alternates including the Text for the Headers-->
 								
-								<!--Name Header Followed by Name-->
+								<!--Name Header-->
 								<StaticImage align="lt">
 	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="70" color="0c0b0b80"/>
 									<StaticText origin="12 0" text="Name" align="lt" font="FF_Header_3" textColor="f97b03"/>
 	    						</StaticImage>
 
+								<!-- Actual Name -->
 								<StaticImage align="lt" origin="0 -70">
 	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="70" color="201f1b"/>
 									<StaticText origin="10 0" text="Fluffy" align="lt" font="FF_Description_4" textColor="f0e3cc"/>
