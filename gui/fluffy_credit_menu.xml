@@ -83,14 +83,17 @@
 			<Item name="FF_Credits_Background">
 				
 				<Item name="Backdrop List" origin="-900 0">
-					<StaticImage>
-	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="350" sizeY="1000" color="0c0b0bbf"/>
+					<StaticImage origin="0 500" align="t"> 
+	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="350" sizeY="920" color="0c0b0bbf"/>
 	    			</StaticImage>
 					
 					<StaticImage origin="0 500" align="t">
 						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="350" sizeY="80" color="f97b03"/>
 					</StaticImage>
 
+					<StaticImage origin="0 -500" align="b">
+	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="350" sizeY="80" color="0c0b0bbf"/>
+	    			</StaticImage>
 					<StaticImage origin="0 -500" align="b">
 	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="350" sizeY="80" color="0c0b0bbf"/>
 	    			</StaticImage>
@@ -157,7 +160,7 @@
 						</OnHover>
 						<OnClick>
 							<RenderObject2D texture="data/textures/gui/social_discord.dds" color="f0e3cc" scaleX="0.9" scaleY="0.9"/>
-							<Action type="OpenURL" target="https://www.youtube.com/watch?v=Qg1qZq5yjps"/>
+							<Action type="OpenURL" target="https://www.youtube.com/watch?v=spLJSjS2uRU"/>
 						</OnClick>
 					</Button>
 
@@ -168,7 +171,7 @@
 					-->
 
 					<Item name="Fluffy_Credits_Maker">
-						<Button name="Fluffy_Credits_Button" align="lb" origin="1000 -495" hidden="False">
+						<Button name="Fluffy_Credits_Button" align="lb" origin="1000 -495" hidden="False" tooltip="Click me for the Github Repo">
 							<ButtonText text="Who made this menu" font="FF_Header_3" textColor="f0e3cc"/>
 							<OnHover>
 								<ButtonText align="" origin="0 0" text="Who made this menu" font="FF_Header_3" textColor="f97b0390"/>
@@ -194,25 +197,11 @@
 							
 							<!-- The Whole of the Personal Section Includes Name and Roles -->
 							<Item name="Fluffy_Personal" origin="0 420">
-		
-								<!-- Grey Box for the Item itself -->
-								<!--
-									Size Y will need to be changed based on the Amount of Roles the Person had
-									In Ascending Order.
-									sizeY="270" 1
-									sizeY="330" 2
-									sizeY="390" 3
-									sizeY="450" 4
-								-->
-								<StaticImage align="lt">
-	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="330" color="0c0b0b80"/>
-	    						</StaticImage>
 
 								<!-- Pretty Much this Whole Section is the Checker Pattern that Alternates including the Text for the Headers -->
-								
 								<!-- Name Header -->
 								<StaticImage align="lt">
-	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="70" color="0c0b0b80"/>
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="70" color="0c0b0bbf"/>
 									<StaticText origin="12 0" text="Name" align="lt" font="FF_Header_3" textColor="f97b03"/>
 	    						</StaticImage>
 
@@ -224,7 +213,7 @@
 
 								<!-- Role Header Followed by Role(s) -->
 								<StaticImage align="lt" origin="0 -140">
-	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="70" color="0c0b0b80"/>
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="70" color="0c0b0bbf"/>
 									<StaticText origin="12 0" text="Roles" align="lt" font="FF_Header_3" textColor="f97b03"/>
 	    						</StaticImage>
 
@@ -268,18 +257,9 @@
 							-->
 							<Item name="Fluffy_Contact" origin="0 70">
 								
-								<!-- 
-									This changes based on the Amount of Contacts
-									sizeY="190" 2 Contacts
-									sizeY="130" 1 Contact
-								-->
-								<StaticImage align="lt" origin="0 0">
-	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="190" color="0c0b0b80"/>
-	    						</StaticImage>
-
 								<!-- Contact Header -->
 								<StaticImage align="lt" origin="0 0">
-	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="70" color="0c0b0b80"/>
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="70" color="0c0b0bbf"/>
 									<StaticText origin="12 0" text="Contact" align="lt" font="FF_Header_3" textColor="f97b03"/>
 	    						</StaticImage>
 

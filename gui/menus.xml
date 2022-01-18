@@ -420,7 +420,7 @@
 			<OnClick>
 				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="314" sizeY="58" color="40392b" blendMode="none"/>
 				<ButtonText text="What's New" font="header_3" origin="0 0" align="c" sizeX="0.9" sizeY="0.9" textColor="f0e3cc"/>
-				<Action type="OpenURL" target="https://store.steampowered.com/news/app/1239080/view/5613172075721044155"/>
+				<Action type="OpenURL" target="https://steamcommunity.com/app/1239080/allnews/"/>
 			</OnClick>
 		</Button>
 	</Item>
