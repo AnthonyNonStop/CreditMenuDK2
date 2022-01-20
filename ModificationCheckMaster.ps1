@@ -1,4 +1,4 @@
-$Version = 0.2
+$Version = 0.3
 $Update = 0
 $ConfirmUpdate = $null
 $Things = Invoke-RestMethod https://raw.githubusercontent.com/MrFlufficans/FluffyCreditMenuDK2/master/UtilVersion
@@ -66,7 +66,7 @@ $DaysBack = [int]$DaysBack
         $ToShow += $Object
     }
 }
-Clear-Content Results.txt
+If (Test-Path -Path ./Results.txt -PathType Leaf) {Clear-Content Results.txt}
 $ToShow | Format-Table -Autosize 
 Write-Host "Press Any Key to Output to Text"
 cmd /c pause | out-null
