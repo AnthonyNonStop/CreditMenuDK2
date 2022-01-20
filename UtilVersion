@@ -1,3 +1,3 @@
-$UpdateCheckerVersion = 0.4
-$TestVariable1 = "Hello"
-$TestVariable2 = 69
+UpdateCheckerVersion = 0.4
+TestVariable1 = 6.5
+TestVariable2 = 3.2
