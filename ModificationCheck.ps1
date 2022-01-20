@@ -1,5 +1,6 @@
 $Version = 0.2
-
+$Update = 0
+$ConfirmUpdate = $null
 $Things = Invoke-RestMethod https://raw.githubusercontent.com/MrFlufficans/FluffyCreditMenuDK2/master/UtilVersion
 $VersionLine = ($Things).split([Environment]::NewLine) | Select-String -Pattern "ModificationCheck" -SimpleMatch
 $VersionLine = $VersionLine.ToString()
@@ -7,32 +8,26 @@ $VersionMaster = $VersionLine.SubString(($VersionLine.Length) -3)
 
 (Invoke-RestMethod "https://artii.herokuapp.com/make?text=Fluffy+Utils&font=smslant") | Write-Host 
 Write-Host "`n  You Are Running ModificationCheck v$Version"
-
+Write-Host "    Hosted On Github.com/MrFlufficans"
 if ($VersionMaster -gt $Version) {
     Write-Host "`n  There is a New Version Available v$VersionMaster`n        Would you Like to Update?"
-    $ConfirmUpdate = Read-Host
-    If ($ConfirmUpdate.ToLower() -eq "yes" -or "y") {
-    
+    $ConfirmUpdate = Read-Host "`t`t"
+    $ConfirmUpdate = ($ConfirmUpdate.ToLower()).ToString()
+    If ($ConfirmUpdate -match '^y(es)?$') {
         $Update = 1
     } else {
-        Write-Host "Continuing to Program"
         $Update = 0    
-        
     }
 } else {$Update = 0}
 
 Start-Sleep 1
 
 If ($Update) {
-    Write-Host "Fetching Update"
+    Write-Host "`nFetching Update"
     If (Test-Path -Path ./ModificationCheck*.ps1 -PathType Leaf) {rm ./ModificationCheck*.ps1}
     Invoke-RestMethod https://raw.githubusercontent.com/MrFlufficans/FluffyCreditMenuDK2/master/ModificationCheck.ps1 >> ModificationCheckv$VersionMaster.ps1
     Write-Host "Script Updated"
 
-    Write-Host "Relaunching in 5"
-    Start-Sleep 1
-    Write-Host "Relaunching in 4"
-    Start-Sleep 1
     Write-Host "Relaunching in 3"
     Start-Sleep 1
     Write-Host "Relaunching in 2"
@@ -41,7 +36,7 @@ If ($Update) {
     Start-Sleep 1
     Start-Process powershell ./ModificationCheckv$VersionMaster.ps1
     Exit
-}
+} else {}
 
 
 $ToShow = @()
