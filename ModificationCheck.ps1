@@ -1,7 +1,7 @@
 $Version = 0.2
 
 $Things = Invoke-RestMethod https://raw.githubusercontent.com/MrFlufficans/FluffyCreditMenuDK2/master/UtilVersion
-$VersionLine = ($Things).split([Environment]::NewLine) | Select-String -Pattern "UpdateCheckerVersion" -SimpleMatch
+$VersionLine = ($Things).split([Environment]::NewLine) | Select-String -Pattern "ModificationCheck" -SimpleMatch
 $VersionLine = $VersionLine.ToString()
 $VersionMaster = $VersionLine.SubString(($VersionLine.Length) -3)
 
