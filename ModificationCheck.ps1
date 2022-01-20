@@ -11,16 +11,16 @@ Write-Host "`n  You Are Running ModificationCheck v$Version"
 if ($VersionMaster -gt $Version) {
     Write-Host "`n  There is a New Version Available v$VersionMaster`n        Would you Like to Update?"
     $ConfirmUpdate = Read-Host
-}
+    If ($ConfirmUpdate.ToLower() -eq "yes" -or "y") {
+    
+        $Update = 1
+    } else {
+        Write-Host "Continuing to Program"
+        $Update = 0    
+        
+    }
+} else {$Update = 0}
 
-If ($ConfirmUpdate.ToLower() -eq "yes" -or "y") {
-    
-    $Update = 1
-} else {
-    Write-Host "Continuing to Program"
-    $Update = 0    
-    
-}
 Start-Sleep 1
 
 If ($Update) {
@@ -45,9 +45,10 @@ If ($Update) {
 
 
 $ToShow = @()
-$DaysBack = Read-Host "How many Days Since Patch"
+Write-Host "`n How many Days to you want to Check back?"
+$DaysBack = Read-Host "                 "
 $DaysBack = [int]$DaysBack
-(Get-ChildItem -Attributes !D -exclude Results.txt,!resource_folder.txt,!help_entities.txt,LICENSE_OFL.txt -Recurse) | foreach {    
+(Get-ChildItem -Attributes !D -exclude Results.txt,!resource_folder.txt,!help_entities.txt,LICENSE_OFL.txt -include *.xml,*.txt -Recurse) | foreach {    
     $ParentFolder = ($_).Directory.Name
     $Name = ($_).Name
     
@@ -75,3 +76,4 @@ $ToShow | Format-Table -Autosize
 Write-Host "Press Any Key to Output to Text"
 cmd /c pause | out-null
 $ToShow | Format-Table -Autosize >> Results.txt
+
