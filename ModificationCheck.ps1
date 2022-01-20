@@ -9,8 +9,9 @@ $VersionMaster = $VersionLine.SubString(($VersionLine.Length) -3)
 Write-Host "`n  You Are Running ModificationCheck v$Version"
 
 if ($VersionMaster -gt $Version) {
-    Write-Host "`n  There is a New Version Available v$VersionMaster`n        Would you Like to Update?"}
-$ConfirmUpdate = Read-Host
+    Write-Host "`n  There is a New Version Available v$VersionMaster`n        Would you Like to Update?"
+    $ConfirmUpdate = Read-Host
+}
 
 If ($ConfirmUpdate.ToLower() -eq "yes" -or "y") {
     
@@ -25,7 +26,7 @@ Start-Sleep 1
 If ($Update) {
     Write-Host "Fetching Update"
     If (Test-Path -Path ./ModificationCheck*.ps1 -PathType Leaf) {rm ./ModificationCheck*.ps1}
-    Invoke-RestMethod https://raw.githubusercontent.com/MrFlufficans/FluffyCreditMenuDK2/master/TestingNewPS.ps1 >> ModificationCheckv$VersionMaster.ps1
+    Invoke-RestMethod https://raw.githubusercontent.com/MrFlufficans/FluffyCreditMenuDK2/master/ModificationCheck.ps1 >> ModificationCheckv$VersionMaster.ps1
     Write-Host "Script Updated"
 
     Write-Host "Relaunching in 5"
