@@ -69,6 +69,5 @@ $DaysBack = [int]$DaysBack
 If (Test-Path -Path ./Results.txt -PathType Leaf) {Clear-Content Results.txt}
 $ToShow | Format-Table -Autosize 
 Write-Host "Press Any Key to Output to Text"
-cmd /c pause | out-null
 $ToShow | Format-Table -Autosize >> Results.txt
-
+cmd /c pause | out-null
