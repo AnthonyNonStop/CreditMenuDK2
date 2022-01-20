@@ -1,4 +1,4 @@
-$Version = 0.3
+$Version = 0.4
 $Update = 0
 $ConfirmUpdate = $null
 $Things = Invoke-RestMethod https://raw.githubusercontent.com/MrFlufficans/FluffyCreditMenuDK2/master/UtilVersion
