@@ -1,4 +1,4 @@
-$Version = 0.2
+$Version = 0.1
 $Update = 0
 $ConfirmUpdate = $null
 $Things = Invoke-RestMethod https://raw.githubusercontent.com/MrFlufficans/FluffyCreditMenuDK2/master/UtilVersion
@@ -24,8 +24,8 @@ Start-Sleep 1
 
 If ($Update) {
     Write-Host "`nFetching Update"
-    If (Test-Path -Path ./ModificationCheck*.ps1 -PathType Leaf) {rm ./ModificationCheck*.ps1}
-    Invoke-RestMethod https://raw.githubusercontent.com/MrFlufficans/FluffyCreditMenuDK2/master/ModificationCheck.ps1 >> ModificationCheckv$VersionMaster.ps1
+    If (Test-Path -Path ./ModificationCheck.ps1 -PathType Leaf) {rm ./ModificationCheck.ps1}
+    Invoke-RestMethod https://raw.githubusercontent.com/MrFlufficans/FluffyCreditMenuDK2/master/ModificationCheckMaster.ps1 >> ModificationCheck.ps1
     Write-Host "Script Updated"
 
     Write-Host "Relaunching in 3"
@@ -34,7 +34,7 @@ If ($Update) {
     Start-Sleep 1
     Write-Host "Relaunching in 1"
     Start-Sleep 1
-    Start-Process powershell ./ModificationCheckv$VersionMaster.ps1
+    Start-Process powershell ./ModificationCheck.ps1
     Exit
 } else {}
 
