@@ -35,306 +35,13 @@
 		<RenderObject2D texture="data/textures/gui/dk2_logo.dds"/>
 	</StaticImage>-->
 	<Item origin="0 -550" align="sv">
-		<StaticText text="LOADING..." font="header_2" origin="860 0" align="l" textColor="f0e3cc"/>
-		<StaticImage origin="800 0" align="l">
-			<RenderObject2D texture="data/textures/gui/missions/pack_missions.tga"/>
-		</StaticImage>
-	</Item>
-</Item>
-
-<Item name="Menu_Generating" origin="0 0" hidden="true">
-	<OnOpen>
-		<Action type="TriggerEvent" target="GUI_CAPTURE_INPUT"/>
-		<Action type="SetForeground" target="Menu_Generating"/>
-	</OnOpen>
-
-	<OnClose>
-		<Action type="TriggerEvent" target="GUI_RELEASE_INPUT"/>
-	</OnClose>
-
-	<StaticImage origin="-420 0">
-		<RenderObject2D texture="data/textures/gui/square.tga" sizeX="99999" sizeY="9999" color="171616"/>
-	</StaticImage>
-	<StaticImage origin="0 0">
-		<RenderObject2D texture="data/textures/gui/bg_texture.dds" sizeX="7680" blendMode="multiply" color="ffffff42" sizeY="1920" texRepeatX="3" texRepeatY="1"/>
-	</StaticImage>
-	<!--<StaticImage origin="0 280" sizeX="1" sizeY="1.2" >
-		<RenderObject2D texture="data/textures/gui/bg_logo_smoke.dds" />
-	</StaticImage>
-	<StaticImage origin="0 340">
-		<RenderObject2D texture="data/textures/gui/dk2_logo.dds"/>
-	</StaticImage>-->
-	<Item origin="0 -550" align="sv">
-		<StaticText text="GENERATING..." font="header_2" origin="860 0" align="l" textColor="f0e3cc"/>
-		<StaticText text="This could take a while" font="header_5" origin="860 -60" align="l" textColor="f0e3cc7f"/>
-		<StaticImage origin="800 0" name="#GeneratingSquare" align="l">
-			<RenderObject2D texture="data/textures/gui/missions/pack_missions.tga"/>
-		</StaticImage>
-	</Item>
-</Item>
-
-<Item name="Menu_RandomMap" origin="0 0" hidden="true">
-	<OnKeyDown key0="27">
-		<Action type="Click" target="Menu_RandomMap_Back"/>
-	</OnKeyDown>
-
-	<OnOpen>
-		<Action type="TriggerEvent" target="GUI_CAPTURE_INPUT"/>
-	</OnOpen>
-
-	<OnClose>
-		<Action type="TriggerEvent" target="GUI_RELEASE_INPUT"/>
-		<Action type="Show" target="Menu_Main"/>
-	</OnClose>
-
-	<StaticImage origin="0 0">
-		<RenderObject2D texture="data/textures/gui/bg_texture.dds" sizeX="7680" color="f0e3cc26" sizeY="1920" texRepeatX="3" texRepeatY="1"/>
-	</StaticImage>
-	<StaticImage name="ScreenBg" origin="0 0">
-		<RenderObject2D texture="data/textures/gui/square.tga" sizeX="2560" sizeY="9999" color="0c0b0bbf"/>
-		<StaticImage align="l" origin="-128 0">
-			<RenderObject2D texture="data/textures/gui/bg_edge.tga" flipX="true" />
-		</StaticImage>
-		<StaticImage align="r" origin="128 0">
-			<RenderObject2D texture="data/textures/gui/bg_edge.tga" flipY="true" />
-		</StaticImage>
-	</StaticImage>
-
-
-
-	<Item sizeX="2000" sizeY="1200" origin="0 40">
-
-		<StaticImage  name="MainBg" origin="0 0">
-			<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1900" sizeY="9999" color="211e1d66"/>
-		</StaticImage>
-
-		<StaticImage align="t" name="TitleBg" origin="0 0">
-			<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1900" sizeY="100" color="f97b03"/>
-			<StaticText origin="0 0" text="@menu_m_missiongen" font="header_2" textColor="201f1b" align="c"/>
-		</StaticImage>
-
-		<StaticImage align="t" name="ConstructionInProgress" origin="0 -110">
-			<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1900" sizeY="32" color="ffc600"/>
-			<StaticText text="CONSTRUCTION IN PROGRESS" font="header_4" origin="0 0" textColor="201f1b"/>
-			<StaticImage align="lt" origin="0 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/>
+		<StaticText name="#loading_text" text="@game_loadingscreen_loading" font="header_2" origin="1200 0" align="r" textColor="f0e3cc">
+			<StaticImage origin="-50 0" name="#GeneratingSquare" align="l">
+				<RenderObject2D texture="data/textures/gui/missions/pack_missions.tga"/>
 			</StaticImage>
-			<StaticImage align="lt" origin="64 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/>
-			</StaticImage>
-			<StaticImage align="lt" origin="128 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/>
-			</StaticImage>
-			<StaticImage align="lt" origin="192 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/>
-			</StaticImage>
-			<StaticImage align="lt" origin="256 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/>
-			</StaticImage>
-			<StaticImage align="lt" origin="320 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/>
-			</StaticImage>
-			<StaticImage align="lt" origin="384 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/>
-			</StaticImage>
-			<StaticImage align="lt" origin="448 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/>
-			</StaticImage>
-			<StaticImage align="lt" origin="512 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/>
-			</StaticImage>
-			<StaticImage align="lt" origin="576 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/>
-			</StaticImage>
-			<StaticImage align="lt" origin="640 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/>
-			</StaticImage>
-			<StaticImage align="lt" origin="704 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/>
-			</StaticImage>
-			<StaticImage align="rt" origin="0 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/>
-			</StaticImage>
-			<StaticImage align="rt" origin="-64 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/>
-			</StaticImage>
-			<StaticImage align="rt" origin="-128 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/>
-			</StaticImage>
-			<StaticImage align="rt" origin="-192 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/>
-			</StaticImage>
-			<StaticImage align="rt" origin="-256 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/>
-			</StaticImage>
-			<StaticImage align="rt" origin="-320 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/>
-			</StaticImage>
-			<StaticImage align="rt" origin="-384 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/>
-			</StaticImage>
-			<StaticImage align="rt" origin="-448 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/>
-			</StaticImage>
-			<StaticImage align="rt" origin="-512 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/>
-			</StaticImage>
-			<StaticImage align="rt" origin="-576 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/>
-			</StaticImage>
-			<StaticImage align="rt" origin="-640 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/>
-			</StaticImage>
-			<StaticImage align="rt" origin="-704 0">
-				<RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/>
-			</StaticImage>
-		</StaticImage>
-
-
-		<!-- settings -->
-		<StaticImage sizeX="936" sizeY="450" origin="0 0">
-			<RenderObject2D texture="data/textures/gui/square.tga" sizeX="936" sizeY="450" color="211e1dB3"/>
-			<!-- opposition strength -->
-			<Item align="t" origin="-448 -30">
-				<StaticImage origin="448 0">
-					<RenderObject2D texture="data/textures/gui/square.tga" sizeX="936" sizeY="60" color="00000050"/>
-				</StaticImage>
-				<StaticText origin="0 0"   text="@menu_m_missiongen_str" align="l" font="paragraph_2" textColor="f0e3cc"/>
-				<Slider 	origin="600 0" name="#RandomMap_EnemiesField"  stealFocus="true" sliderType="linear" integerValues="false" startValue="1.0" endValue="10.0" >
-					<BackgroundGraphics>
-						<RenderObject2D texture="data/textures/gui/menu_sliderbar_normal.tga"/>
-					</BackgroundGraphics>
-
-					<ButtonGraphics>
-						<RenderObject2D texture="data/textures/gui/menu_sliderpointer_normal.tga"/>
-						<OnHover>
-							<RenderObject2D texture="data/textures/gui/menu_sliderpointer_hover.tga"/>
-						</OnHover>
-						<OnClick>
-							<RenderObject2D texture="data/textures/gui/menu_sliderpointer_hover.tga"/>
-						</OnClick>
-					</ButtonGraphics>
-				</Slider>
-				<StaticText origin="816 0" name="#RandomMap_EnemiesTxt" text="0.7" font="paragraph_2" textColor="f0e3cc"/>
-			</Item>
-
-			<!-- map size -->
-			<Item align="t" origin="-448 -90" >
-				<StaticImage origin="448 0">
-					<RenderObject2D texture="data/textures/gui/square.tga" sizeX="936" sizeY="60" color="00000050"/>
-				</StaticImage>
-				<StaticText origin="0 0"   text="@menu_m_missiongen_msize" align="l" font="paragraph_2" textColor="f0e3cc"/>
-
-				<StaticText origin="600 0" name="#RandomMap_MapSizeTxt" text="0.7" font="paragraph_2" textColor="f0e3cc"/>
-
-				<Button origin="350 0" align="l" name="#RandomMap_MapSizePrev">
-					<RenderObject2D texture="data/textures/gui/menu_arrowright_normal.tga" flipX="true"/>
-					<OnHover>
-						<RenderObject2D texture="data/textures/gui/menu_arrowright_hover.tga" flipX="true"/>
-					</OnHover>
-					<OnClick>
-						<RenderObject2D texture="data/textures/gui/menu_arrowright_normal.tga" flipX="true"/>
-					</OnClick>
-				</Button>
-
-				<Button origin="850 0" align="r" name="#RandomMap_MapSizeNext">
-					<RenderObject2D texture="data/textures/gui/menu_arrowright_normal.tga"/>
-					<OnHover>
-						<RenderObject2D texture="data/textures/gui/menu_arrowright_hover.tga"/>
-					</OnHover>
-					<OnClick>
-						<RenderObject2D texture="data/textures/gui/menu_arrowright_normal.tga"/>
-					</OnClick>
-				</Button>
-			</Item>
-
-			<!-- map -->
-			<Item align="t" origin="-448 -150" name="#RandomMap_ChooseMap" >
-				<StaticImage origin="448 0">
-					<RenderObject2D texture="data/textures/gui/square.tga" sizeX="936" sizeY="60" color="00000050"/>
-				</StaticImage>
-				<StaticText origin="0 0"   text="Map" align="l" font="paragraph_2" textColor="f0e3cc"/>
-
-				<StaticText origin="600 0" name="#RandomMap_ChooseMapTxt" text="0.7" font="paragraph_2" textColor="f0e3cc"/>
-
-				<Button origin="350 0" align="l" name="#RandomMap_ChooseMapPrev">
-					<RenderObject2D texture="data/textures/gui/menu_arrowright_normal.tga" flipX="true"/>
-					<OnHover>
-						<RenderObject2D texture="data/textures/gui/menu_arrowright_hover.tga" flipX="true"/>
-					</OnHover>
-					<OnClick>
-						<RenderObject2D texture="data/textures/gui/menu_arrowright_normal.tga" flipX="true"/>
-						<!-- <Action type="TriggerEvent" target="GUI_GAME_OPTIONS_PREV_LANGUAGE"/> -->
-					</OnClick>
-				</Button>
-
-				<Button origin="850 0" align="r" name="#RandomMap_ChooseMapNext">
-					<RenderObject2D texture="data/textures/gui/menu_arrowright_normal.tga"/>
-					<OnHover>
-						<RenderObject2D texture="data/textures/gui/menu_arrowright_hover.tga"/>
-					</OnHover>
-					<OnClick>
-						<RenderObject2D texture="data/textures/gui/menu_arrowright_normal.tga"/>
-						<!-- <Action type="TriggerEvent" target="GUI_GAME_OPTIONS_NEXT_LANGUAGE"/> -->
-					</OnClick>
-				</Button>
-			</Item>
-
-			<!-- seed -->
-			<StaticImage align="b" origin="0 0">
-				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="936" sizeY="72" color="f97b03"/>
-				<StaticText text="@menu_m_missiongen_seed" align="lt" origin="20 0" font="header_3" textColor="201f1b" />
-			</StaticImage>
-			<Editbox name="#RandomMap_SeedField" origin="0 0" align="br" acceptNumbers="true" acceptLetters="true" forceUppercase="true" maxCharacters="10" focusedTextColor="f0e3cc">
-				<TextFormat origin="10 0" align="l" text="#A6213774B" font="header_3" textColor="f0e3cc"/>
-				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="270" sizeY="72" color="000000f0"/>
-				<OnHover>
-					<RenderObject2D texture="data/textures/gui/menu_darkbrown_background.tga" color="000000d2" sizeX="270" sizeY="72"/>
-				</OnHover>
-				<OnClick>
-					<RenderObject2D texture="data/textures/gui/menu_darkbrown_background.tga" color="000000d2" sizeX="270" sizeY="72"/>
-				</OnClick>
-				<Cursor>
-					<RenderObject2D texture="data/textures/gui/editbox_cursor.tga" scaleY="3"/>
-				</Cursor>
-			</Editbox>
-		</StaticImage>
-	</Item>
-
-	<Item align="sv" origin="0 -688">
-		<StaticImage name="ScreenFooter" align="b" origin="0 -32">
-			<RenderObject2D texture="data/textures/gui/square.tga" sizeX="9999" sizeY="120" color="211e1d"/>
-		</StaticImage>
-
-		<!-- back button -->
-		<Button name="Menu_RandomMap_Back" align="lb" origin="-1200 -4">
-			<ButtonText align="l" origin="20 0" text="@menu_generic_back" font="header_2" textColor="f0e3cc"/>
-			<OnHover>
-				<RenderObject2D texture="data/textures/gui/button_hover_01.tga" color="f0e3cc" flipX="false"/>
-				<ButtonText align="l" origin="20 0" text="@menu_generic_back" font="header_2" textColor="211e1d"/>
-			</OnHover>
-			<OnClick>
-				<RenderObject2D texture="data/textures/gui/button_hover_01.tga" color="40392b" flipX="false"/>
-				<Action type="Hide" target="Menu_RandomMap"/>
-				<Action type="Show" target="Menu_Main"/>
-			</OnClick>
-		</Button>
-
-		<!-- start button -->
-		<Button name="Menu_RandomMap_Start" align="rb" origin="1200 -4">
-			<ButtonText align="r" origin="-20 0" text="@menu_m_brief_go" font="header_2" textColor="f0e3cc"/>
-			<OnHover>
-				<RenderObject2D texture="data/textures/gui/button_hover_01.tga" color="f0e3cc" flipX="true"/>
-				<ButtonText align="r" origin="-20 0" text="@menu_m_brief_go" font="header_2" textColor="211e1d"/>
-			</OnHover>
-			<OnClick>
-				<RenderObject2D texture="data/textures/gui/button_hover_01.tga" color="40392b" flipX="true"/>
-
-				<Action type="Hide" target="Menu_RandomMap"/>
-				<Action type="TriggerEvent" target="GUI_GAME_RANDOMMAP_START"/>
-				<Action type="Show" target="Menu_Loading"/>
-			</OnClick>
-		</Button>
+			
+			<StaticText name="#loading_subtext" text="@game_loadingscreen_longtime" font="header_5" origin="0 -10" align="bl" textColor="f0e3cc7f"/>
+		</StaticText>
 	</Item>
 </Item>
 
@@ -405,7 +112,7 @@
 	</Button>
 
 
-	<StaticText text="EARLY ACCESS 11.0" font="header_3" origin="0 -560" align="c" textColor="40382bdc"/>
+	<StaticText text="EARLY ACCESS 12.0" font="header_3" origin="0 -560" align="c" textColor="40382bdc"/>
 	<Item name="Extra Buttons" origin="0 -640" align="lbsv">
 		<StaticImage name="Options Background" origin="0 0">
 			<RenderObject2D texture="data/textures/gui/square.tga" color="0c0b0b80" sizeX="332" sizeY="76"/>
@@ -458,20 +165,6 @@
 		</Button>
 
 		<Button origin="0 -180" sizeX="670" sizeY="90">
-			<ButtonText origin="0 0" text="@menu_m_randommap" font="header_2" textColor="40382b"/>
-			<OnHover>
-				<RenderObject2D texture="data/textures/gui/menu_select.dds" color="40382b" />
-				<ButtonText origin="0 0" text="@menu_m_randommap" font="header_2" textColor="f0e3cc"/>
-			</OnHover>
-			<OnClick>
-				<RenderObject2D texture="data/textures/gui/menu_select.dds" color="40382b" scaleX="0.9" scaleY="0.9"/>
-				<ButtonText origin="0 0" text="@menu_m_randommap" font="header_3" textColor="f0e3cc"/>
-				<Action type="Hide" target="Menu_Main"/>
-				<Action type="Show" target="Menu_RandomMap"/>
-			</OnClick>
-		</Button>
-
-		<Button origin="0 -270" sizeX="670" sizeY="90">
 			<ButtonText origin="0 0" text="@menu_m_optionseditor_ttip" font="header_2" textColor="40382b"/>
 			<OnHover>
 				<RenderObject2D texture="data/textures/gui/menu_select.dds" color="40382b" />
@@ -486,7 +179,7 @@
 			</OnClick>
 		</Button>
 
-		<Button origin="0 -360" sizeX="670" sizeY="90">
+		<Button origin="0 -270" sizeX="670" sizeY="90">
 			<ButtonText origin="0 0" text="@menu_m_quit" font="header_2" textColor="40382b"/>
 			<OnHover>
 				<RenderObject2D texture="data/textures/gui/menu_select.dds" color="40382b" />
@@ -499,7 +192,7 @@
 			</OnClick>
 		</Button>
 
-		<StaticImage origin="0 -420">
+		<StaticImage origin="0 -330">
 			<RenderObject2D texture="data/textures/gui/menu_separator_top.dds" color="40382b" flipY="true"/>
 		</StaticImage>
 	</Item>
@@ -557,6 +250,21 @@
 		</StaticImage>
 	</Item>
 
+	<!-- Fluffy's Credits Menu Button-->
+		<StaticImage name="Fluffy Options Background" origin="0 300">
+			<RenderObject2D texture="data/textures/gui/square.tga" color="0c0b0b80" sizeX="76" sizeY="76"/>
+		</StaticImage>
+		<Button name="Fluffy Options" origin="0 200" sizeX="72" sizeY="72" tooltip="New Button BABE!">
+			<RenderObject2D texture="data/textures/gui/menu_options_normal.dds" blendMode="none"/>
+			<OnHover>
+				<RenderObject2D texture="data/textures/gui/menu_options_hover.dds" blendMode="none"/>
+			</OnHover>
+			<OnClick>
+				<RenderObject2D texture="data/textures/gui/menu_options_hover.dds" scaleX="0.95" scaleY="0.95" blendMode="none"/>
+				<Action type="Show" target="FF_Credits_Controller"/>
+			</OnClick>
+		</Button>
+
 	<Item name="Extra Buttons" origin="1196 -640" align="bsv">
 		<StaticImage origin="-160 0">
 			<RenderObject2D texture="data/textures/gui/square.tga" color="0c0b0b80" sizeX="76" sizeY="76"/>
@@ -584,21 +292,6 @@
 			<OnClick>
 				<RenderObject2D texture="data/textures/gui/menu_options_hover.dds" scaleX="0.95" scaleY="0.95" blendMode="none"/>
 				<Action type="Show" target="Menu_Options_Main"/>
-			</OnClick>
-		</Button>
-
-		<!-- Fluffy's Mod Credits Button -->
-		<StaticImage name="Fluffy Options Background" origin="0 200">
-			<RenderObject2D texture="data/textures/gui/square.tga" color="0c0b0b80" sizeX="76" sizeY="76"/>
-		</StaticImage>
-		<Button name="Fluffy Options" origin="0 200" sizeX="72" sizeY="72" tooltip="New Button BABE!">
-			<RenderObject2D texture="data/textures/gui/menu_options_normal.dds" blendMode="none"/>
-			<OnHover>
-				<RenderObject2D texture="data/textures/gui/menu_options_hover.dds" blendMode="none"/>
-			</OnHover>
-			<OnClick>
-				<RenderObject2D texture="data/textures/gui/menu_options_hover.dds" scaleX="0.95" scaleY="0.95" blendMode="none"/>
-				<Action type="Show" target="FF_Credits_Controller"/>
 			</OnClick>
 		</Button>
 
@@ -669,7 +362,7 @@
 	</StaticImage>
 
 	<!-- enclose all butons in a single parent item which is centered on the background -->
-	<Item origin="0 0" sizeX="670" sizeY="90">
+	<Item origin="0 -40" sizeX="670" sizeY="90">
 		<StaticImage origin="0 60">
 				<RenderObject2D texture="data/textures/gui/menu_separator_top.dds" color="f0e3cc"/>
 		</StaticImage>
@@ -713,7 +406,7 @@
 			<OnClick>
 				<RenderObject2D texture="data/textures/gui/menu_select.dds" color="f0e3cc" scaleX="0.9" scaleY="0.9"/>
 				<ButtonText origin="0 0" text="@menu_m_next_mission" font="header_3" textColor="40382b"/>
-				<Action type="TriggerEvent" target="GUI_GAME_MISSIONEND_CONTINUE"/>
+				<Action type="TriggerEvent" target="GUI_GAME_MENU_NEXT_MISSION"/>
 			</OnClick>
 		</Button>
 
@@ -738,6 +431,9 @@
 			<RenderObject2D texture="data/textures/gui/square.tga" color="0c0b0b80" sizeX="76" sizeY="76"/>
 		</StaticImage>
 		<StaticImage name="HowToPlay Background" origin="-80 0">
+			<RenderObject2D texture="data/textures/gui/square.tga" color="0c0b0b80" sizeX="76" sizeY="76"/>
+		</StaticImage>
+		<StaticImage name="Fluffy Options Background" origin="0 300">
 			<RenderObject2D texture="data/textures/gui/square.tga" color="0c0b0b80" sizeX="76" sizeY="76"/>
 		</StaticImage>
 		<Button name="Options" origin="0 0" sizeX="72" sizeY="72" tooltip="@menu_m_optionsgame_ttip">
@@ -774,8 +470,16 @@
 		-->
 
 		<Item origin="-40 -55" name="#MapSeedParent" hidden="true">
-			<StaticText origin="0 0" text="Seed" font="paragraph_2" textColor="f97b03ff"/>
-			<StaticText name="#MapSeed" origin="0 -30" text="0xBAADF00D" font="paragraph_2" textColor="f0e3cc"/>
+			<StaticText origin="0 0" text="Seed" font="paragraph_2" textColor="f97b03ff" tooltip="@menu_m_missiongen_copy">
+				<OnCursorDown>
+					<Action type="TriggerEvent" target="GUI_GAME_RANDOMMAP_COPYSEED"/>
+				</OnCursorDown>
+			</StaticText>
+			<StaticText name="#MapSeed" origin="0 -30" text="0xBAADF00D" font="paragraph_2" textColor="f0e3cc" tooltip="@menu_m_missiongen_copy">
+				<OnCursorDown>
+					<Action type="TriggerEvent" target="GUI_GAME_RANDOMMAP_COPYSEED"/>
+				</OnCursorDown>
+			</StaticText>
 		</Item>
 	</Item>
 
@@ -899,6 +603,18 @@
 	</OnClose>
 </Item>
 
+<Item name="Menu_MissionSelect_IngameMenu" hidden="true">
+	<OnOpen>
+		<Action type="Hide" target="Menu_Ingame"/>
+		<Action type="Show" target="Menu_MissionSelect"/>
+	</OnOpen>
+
+	<OnClose>
+		<Action type="Hide" target="Menu_MissionSelect"/>
+		<Action type="Show" target="Menu_Ingame"/>
+	</OnClose>
+</Item>
+
 <Item name="Menu_MissionSelect" origin="0 0" hidden="true">
 	<OnOpen>
 		<Action type="TriggerEvent" target="GUI_CAPTURE_INPUT"/>
@@ -911,6 +627,7 @@
 		<Action type="Hide" target="Menu_MissionSelect_Main"/>
 		<Action type="Hide" target="Menu_MissionSelect_Host"/>
 		<Action type="Hide" target="Menu_MissionSelect_Endscreen"/>
+		<Action type="Hide" target="Menu_MissionSelect_IngameMenu"/>
 	</OnClose>
 
 	<OnKeyDown key0="27">
@@ -1066,6 +783,8 @@
 
 		<Item origin="-239 146" name="#ScenarioTooltip" tooltip="changed by the game" sizeX="90" sizeY="90">
 			<!-- mission types need to be named #ScenarioImg_*, where * is one of the string mission types that are also kept in the map.xml file -->
+			<StaticImage name="#ScenarioImg_None" hidden="true">
+			</StaticImage>
 			<StaticImage name="#ScenarioImg_ClearHostiles" hidden="true">
 				<RenderObject2D texture="data/textures/gui/missions/mission_clear_hostiles.dds"/>
 			</StaticImage>
@@ -1144,6 +863,8 @@
 		</Item>
 
 		<StaticText name="#MapName" origin="0 -94" text="Cartel beach party" font="header_4" textColor="f0e3cc"/>
+		<Item name="#MapListIndex"/>
+		<Item name="#MapBundleIndex"/>
 
 		<Item align="b" origin="0 53">
 			<StaticImage name="#star0" origin="-53 0">
@@ -1164,8 +885,6 @@
 			</OnHover>
 			<OnClick>
 				<RenderObject2D texture="data/textures/gui/mod_remove.dds" scaleX="0.8" scaleY="0.8"/>
-
-				<!-- modified by the game to be sent with the right parameters -->
 				<Action type="TriggerEvent" target="GUI_GAME_MISSION_DELETE"/>
 			</OnClick>
 		</Button>
@@ -1178,8 +897,6 @@
 				</OnHover>
 				<OnClick>
 					<RenderObject2D texture="data/textures/gui/mod_thumbsup.dds" scaleX="0.8" scaleY="0.8"/>
-
-					<!-- modified by the game to be sent with the right parameters -->
 					<Action type="TriggerEvent" target="GUI_GAME_WORKSHOP_MISSION_THUMBS_UP"/>
 				</OnClick>
 			</UncheckedState>
@@ -1191,6 +908,17 @@
 				</OnHover>
 			</CheckedState>
 		</Checkbox>
+		
+		<Button name="#OpenInWorkshopButton" align="lb" origin="82 22" tooltip="@menu_m_show_in_workshop">
+			<RenderObject2D texture="data/textures/gui/customization/info_normal.tga" color="ffffffaa"/>
+			<OnHover>
+				<RenderObject2D texture="data/textures/gui/customization/info_hover.tga" color="ffffffbe"/>
+			</OnHover>
+			<OnClick>
+				<RenderObject2D texture="data/textures/gui/customization/info_normal.tga" color="ffffffaa"/>
+				<Action type="TriggerEvent" target="GUI_GAME_WORKSHOP_MISSION_OPEN_IN_BROWSER"/>
+			</OnClick>
+		</Button>
 	</Button>
 
 
@@ -1343,8 +1071,596 @@
 
 				<StaticText align="l" origin="-130 0" text="SORT:" font="header_3" textColor="f0e3cc"/>
 			</StaticImage>
-		</Item>
+		</Item> <!-- workshop_controls -->
 	</Item>
+	
+	<Item name="#MissionSelect_RndMapGen" origin="334 60" hidden="false">
+		<Item align="t" origin="0 640">
+			<StaticImage align="t" name="TitleBg" origin="0 0">
+				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1900" sizeY="100" color="f97b03"/>
+				<StaticText origin="0 0" text="@menu_m_missiongen" font="header_2" textColor="201f1b" align="c"/>
+			</StaticImage>
+
+			<!-- <StaticImage align="t" name="ConstructionInProgress" origin="0 -110"> -->
+				<!-- <RenderObject2D texture="data/textures/gui/square.tga" sizeX="1900" sizeY="32" color="ffc600"/> -->
+				<!-- <StaticText text="CONSTRUCTION IN PROGRESS" font="header_4" origin="0 0" textColor="201f1b"/> -->
+				<!-- <StaticImage align="lt" origin="0 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="lt" origin="64 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="lt" origin="128 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="lt" origin="192 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="lt" origin="256 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="lt" origin="320 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="lt" origin="384 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="lt" origin="448 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="lt" origin="512 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="lt" origin="576 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="lt" origin="640 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="lt" origin="704 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="rt" origin="0 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="rt" origin="-64 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="rt" origin="-128 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="rt" origin="-192 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="rt" origin="-256 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="rt" origin="-320 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="rt" origin="-384 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="rt" origin="-448 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="rt" origin="-512 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="rt" origin="-576 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="rt" origin="-640 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticImage align="rt" origin="-704 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/construction_in_progress_band.dds" color="211e1d" flipX="true"/> -->
+				<!-- </StaticImage> -->
+			<!-- </StaticImage> -->
+		</Item>
+
+		<Item align="t" origin="0 520">
+			<StaticText origin="0 0" text="@menu_m_missiongen_msize" align="t" font="header_3" textColor="f97b03"/>
+			<StaticImage origin="0 -74" align="t">
+				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1900" sizeY="8" color="f97b03"/>
+			</StaticImage>
+
+			<!-- <StaticText origin="0 -94" name="#RandomMap_MapSizeTxt" text="0.7" font="paragraph_1" textColor="f0e3cc"/> -->
+			
+			<Item origin="-240 -94" name="#RandomMap_MapSizeButtons" >
+				<Checkbox origin="-480 0" align="t" stealFocus="true" defaultState="UncheckedState" >
+					<OnCursorUp>
+						<Action type="TriggerEvent" target="GUI_GAME_RANDOMMAP_MAPSIZE" iParam="0"/>
+					</OnCursorUp>
+					
+					<UncheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="460" sizeY="260" color="000000AF"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="460" sizeY="260" color="40392bAF"/>
+						</OnHover>
+					</UncheckedState>
+
+					<CheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="460" sizeY="260" color="144355af"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="460" sizeY="260" color="144355"/>
+						</OnHover>
+					</CheckedState>
+					
+					<StaticImage origin="0 10" align="t">
+						<RenderObject2D texture="data/textures/gui/rmg/mapsize_random.dds" />
+					</StaticImage>
+					<StaticImage origin="10 10" align="bl">
+						<RenderObject2D texture="data/textures/gui/rmg/icon_troopercount.dds" />
+					</StaticImage>
+					<StaticText origin="50 5" align="bl" text="?" font="header_3" textColor="f0e3cc"/>
+				</Checkbox>
+				
+				<Checkbox origin="0 0" align="t" stealFocus="true" defaultState="UncheckedState" >
+					<OnCursorUp>
+						<Action type="TriggerEvent" target="GUI_GAME_RANDOMMAP_MAPSIZE" iParam="1"/>
+					</OnCursorUp>
+					
+					<UncheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="460" sizeY="260" color="000000AF"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="460" sizeY="260" color="40392bAF"/>
+						</OnHover>
+					</UncheckedState>
+
+					<CheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="460" sizeY="260" color="144355af"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="460" sizeY="260" color="144355"/>
+						</OnHover>
+					</CheckedState>
+					
+					<StaticImage origin="0 20" align="t">
+						<RenderObject2D texture="data/textures/gui/rmg/mapsize_s.dds" />
+					</StaticImage>
+					<StaticImage origin="10 10" align="bl">
+						<RenderObject2D texture="data/textures/gui/rmg/icon_troopercount.dds" />
+					</StaticImage>
+					<StaticText origin="50 5" align="bl" text="2-4" font="header_3" textColor="f0e3cc"/>
+				</Checkbox>
+				
+				<Checkbox origin="480 0" align="t" stealFocus="true" defaultState="UncheckedState" >
+					<OnCursorUp>
+						<Action type="TriggerEvent" target="GUI_GAME_RANDOMMAP_MAPSIZE" iParam="2"/>
+					</OnCursorUp>
+					
+					<UncheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="460" sizeY="260" color="000000AF"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="460" sizeY="260" color="40392bAF"/>
+						</OnHover>
+					</UncheckedState>
+
+					<CheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="460" sizeY="260" color="144355af"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="460" sizeY="260" color="144355"/>
+						</OnHover>
+					</CheckedState>
+					
+					<StaticImage origin="0 20" align="t">
+						<RenderObject2D texture="data/textures/gui/rmg/mapsize_m.dds" />
+					</StaticImage>
+					<StaticImage origin="10 10" align="bl">
+						<RenderObject2D texture="data/textures/gui/rmg/icon_troopercount.dds" />
+					</StaticImage>
+					<StaticText origin="50 5" align="bl" text="4-7" font="header_3" textColor="f0e3cc"/>
+				</Checkbox>
+				
+				<Checkbox origin="960 0" align="t" stealFocus="true" defaultState="UncheckedState" >
+					<OnCursorUp>
+						<Action type="TriggerEvent" target="GUI_GAME_RANDOMMAP_MAPSIZE" iParam="3"/>
+					</OnCursorUp>
+					
+					<UncheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="460" sizeY="260" color="000000AF"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="460" sizeY="260" color="40392bAF"/>
+						</OnHover>
+					</UncheckedState>
+
+					<CheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="460" sizeY="260" color="144355af"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="460" sizeY="260" color="144355"/>
+						</OnHover>
+					</CheckedState>
+					
+					<StaticImage origin="0 20" align="t">
+						<RenderObject2D texture="data/textures/gui/rmg/mapsize_l.dds" />
+					</StaticImage>
+					<StaticImage origin="10 10" align="bl">
+						<RenderObject2D texture="data/textures/gui/rmg/icon_troopercount.dds" />
+					</StaticImage>
+					<StaticText origin="50 5" align="bl" text="8+" font="header_3" textColor="f0e3cc"/>
+				</Checkbox>
+			</Item>
+		</Item>
+		
+		<Item align="t" origin="0 160">
+			<StaticText origin="0 0" text="@menu_m_missiongen_str" align="t" font="header_3" textColor="f97b03"/>
+			<StaticImage origin="0 -74" align="t">
+				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1900" sizeY="8" color="f97b03"/>
+			</StaticImage>
+
+			<Item origin="0 -94" name="#RandomMap_MapDiffButtons" >
+				<Checkbox origin="-768 0" align="t" stealFocus="true" defaultState="UncheckedState" >
+					<OnCursorUp>
+						<Action type="TriggerEvent" target="GUI_GAME_RANDOMMAP_DIFFICULTY" iParam="0"/>
+					</OnCursorUp>
+					
+					<UncheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="364" sizeY="180" color="000000AF"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="364" sizeY="180" color="40392bAF"/>
+						</OnHover>
+					</UncheckedState>
+
+					<CheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="364" sizeY="180" color="144355af"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="364" sizeY="180" color="144355"/>
+						</OnHover>
+					</CheckedState>
+					
+					<StaticImage origin="0 0" align="">
+						<RenderObject2D texture="data/textures/gui/rmg/opposition_verylight.dds" />
+					</StaticImage>
+				</Checkbox>
+				
+				<Checkbox origin="-384 0" align="t" stealFocus="true" defaultState="UncheckedState" >
+					<OnCursorUp>
+						<Action type="TriggerEvent" target="GUI_GAME_RANDOMMAP_DIFFICULTY" iParam="1"/>
+					</OnCursorUp>
+					
+					<UncheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="364" sizeY="180" color="000000AF"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="364" sizeY="180" color="40392bAF"/>
+						</OnHover>
+					</UncheckedState>
+
+					<CheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="364" sizeY="180" color="144355af"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="364" sizeY="180" color="144355"/>
+						</OnHover>
+					</CheckedState>
+					
+					<StaticImage origin="0 0" align="">
+						<RenderObject2D texture="data/textures/gui/rmg/opposition_light.dds" />
+					</StaticImage>
+				</Checkbox>
+				
+				<Checkbox origin="0 0" align="t" stealFocus="true" defaultState="UncheckedState" >
+					<OnCursorUp>
+						<Action type="TriggerEvent" target="GUI_GAME_RANDOMMAP_DIFFICULTY" iParam="2"/>
+					</OnCursorUp>
+					
+					<UncheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="364" sizeY="180" color="000000AF"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="364" sizeY="180" color="40392bAF"/>
+						</OnHover>
+					</UncheckedState>
+
+					<CheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="364" sizeY="180" color="144355af"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="364" sizeY="180" color="144355"/>
+						</OnHover>
+					</CheckedState>
+					
+					<StaticImage origin="0 0" align="">
+						<RenderObject2D texture="data/textures/gui/rmg/opposition_medium.dds" />
+					</StaticImage>
+				</Checkbox>
+				
+				<Checkbox origin="384 0" align="t" stealFocus="true" defaultState="UncheckedState" >
+					<OnCursorUp>
+						<Action type="TriggerEvent" target="GUI_GAME_RANDOMMAP_DIFFICULTY" iParam="3"/>
+					</OnCursorUp>
+					
+					<UncheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="364" sizeY="180" color="000000AF"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="364" sizeY="180" color="40392bAF"/>
+						</OnHover>
+					</UncheckedState>
+
+					<CheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="364" sizeY="180" color="144355af"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="364" sizeY="180" color="144355"/>
+						</OnHover>
+					</CheckedState>
+					
+					<StaticImage origin="0 0" align="">
+						<RenderObject2D texture="data/textures/gui/rmg/opposition_heavy.dds" />
+					</StaticImage>
+				</Checkbox>
+				
+				<Checkbox origin="768 0" align="t" stealFocus="true" defaultState="UncheckedState" >
+					<OnCursorUp>
+						<Action type="TriggerEvent" target="GUI_GAME_RANDOMMAP_DIFFICULTY" iParam="4"/>
+					</OnCursorUp>
+					
+					<UncheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="364" sizeY="180" color="000000AF"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="364" sizeY="180" color="40392bAF"/>
+						</OnHover>
+					</UncheckedState>
+
+					<CheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="364" sizeY="180" color="144355af"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="364" sizeY="180" color="144355"/>
+						</OnHover>
+					</CheckedState>
+					
+					<StaticImage origin="0 0" align="">
+						<RenderObject2D texture="data/textures/gui/rmg/opposition_insane.dds" />
+					</StaticImage>
+				</Checkbox>
+			</Item>
+		</Item>
+		
+		<Item align="t" origin="0 -120">
+			<StaticText origin="0 0" text="@menu_m_missiongen_mtype" align="t" font="header_3" textColor="f97b03"/>
+			<StaticImage origin="0 -74" align="t">
+				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1900" sizeY="8" color="f97b03"/>
+			</StaticImage>
+
+			<Item origin="-100 -94" name="#RandomMap_MapTypeButtons" >
+				
+				<Checkbox origin="-200 0" align="t" stealFocus="true" defaultState="UncheckedState" tooltip="@menu_m_missiongen_rnd">
+					<UncheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="180" sizeY="180" color="000000AF"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="180" sizeY="180" color="40392bAF"/>
+						</OnHover>
+					</UncheckedState>
+
+					<CheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="180" sizeY="180" color="144355af"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="180" sizeY="180" color="144355"/>
+						</OnHover>
+					</CheckedState>
+					
+					<OnCursorUp>
+						<Action type="TriggerEvent" target="GUI_GAME_RANDOMMAP_TYPE" iParam="0"/>
+					</OnCursorUp>
+					<StaticImage origin="0 0" align="">
+						<RenderObject2D texture="data/textures/gui/rmg/rmg_missiontype_random.dds" />
+					</StaticImage>
+				</Checkbox>
+				
+				<Checkbox origin="0 0" align="t" stealFocus="true" defaultState="UncheckedState" tooltip="@scenario_type_hostage">
+					<UncheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="180" sizeY="180" color="000000AF"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="180" sizeY="180" color="40392bAF"/>
+						</OnHover>
+					</UncheckedState>
+
+					<CheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="180" sizeY="180" color="144355af"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="180" sizeY="180" color="144355"/>
+						</OnHover>
+					</CheckedState>
+					
+					<OnCursorUp>
+						<Action type="TriggerEvent" target="GUI_GAME_RANDOMMAP_TYPE" iParam="1"/>
+					</OnCursorUp>
+					<StaticImage origin="0 0" align="">
+						<RenderObject2D texture="data/textures/gui/rmg/rmg_missiontype_hostagerescue.dds" />
+					</StaticImage>
+				</Checkbox>
+				
+				<Checkbox origin="200 0" align="t" stealFocus="true" defaultState="UncheckedState" tooltip="@scenario_type_clear">
+					<UncheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="180" sizeY="180" color="000000AF"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="180" sizeY="180" color="40392bAF"/>
+						</OnHover>
+					</UncheckedState>
+
+					<CheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="180" sizeY="180" color="144355af"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="180" sizeY="180" color="144355"/>
+						</OnHover>
+					</CheckedState>
+					
+					<OnCursorUp>
+						<Action type="TriggerEvent" target="GUI_GAME_RANDOMMAP_TYPE" iParam="2"/>
+					</OnCursorUp>
+					<StaticImage origin="0 0" align="">
+						<RenderObject2D texture="data/textures/gui/rmg/rmg_missiontype_clearhostiles.dds" />
+					</StaticImage>
+				</Checkbox>
+				
+				<Checkbox origin="400 0" align="t" stealFocus="true" defaultState="UncheckedState" tooltip="@scenario_type_abduction">
+					<UncheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="180" sizeY="180" color="000000AF"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="180" sizeY="180" color="40392bAF"/>
+						</OnHover>
+					</UncheckedState>
+
+					<CheckedState>
+						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="180" sizeY="180" color="144355af"/>
+						<OnHover>
+							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="180" sizeY="180" color="144355"/>
+						</OnHover>
+					</CheckedState>
+					
+					<OnCursorUp>
+						<Action type="TriggerEvent" target="GUI_GAME_RANDOMMAP_TYPE" iParam="3"/>
+					</OnCursorUp>
+					<StaticImage origin="0 0" align="">
+						<RenderObject2D texture="data/textures/gui/rmg/rmg_missiontype_abduction.dds" />
+					</StaticImage>
+				</Checkbox>
+			</Item>
+		</Item>
+		
+		<!-- seed -->
+		<Item align="t" origin="0 -400">
+			<StaticText origin="0 0" text="@menu_m_missiongen_seed" align="t" font="header_3" textColor="f97b03"/>
+			<StaticImage origin="0 -74" align="t">
+				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1900" sizeY="8" color="f97b03"/>
+			</StaticImage>
+
+			
+			<Editbox name="#RandomMap_SeedField" origin="0 -94" align="t" acceptNumbers="true" acceptLetters="true" forceUppercase="true" maxCharacters="10" focusedTextColor="f97b03">
+				<TextFormat origin="10 0" align="c" text="#A6213774B" font="header_3" textColor="f0e3cc"/>
+				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1900" sizeY="100" color="000000AF"/>
+				<OnHover>
+					<RenderObject2D texture="data/textures/gui/menu_darkbrown_background.tga" color="000000d2" sizeX="1900" sizeY="100"/>
+				</OnHover>
+				<OnClick>
+					<RenderObject2D texture="data/textures/gui/menu_darkbrown_background.tga" color="000000d2" sizeX="1900" sizeY="100"/>
+				</OnClick>
+				<Cursor>
+					<RenderObject2D texture="data/textures/gui/editbox_cursor.tga" scaleY="3"/>
+				</Cursor>
+				<OnRClickDown>
+					<Action type="TriggerEvent" target="GUI_GAME_RANDOMMAP_PASTESEED"/>
+				</OnRClickDown>
+			</Editbox>
+		</Item>
+		
+		<!-- <!-- settings --> -->
+		<!-- <StaticImage sizeX="936" sizeY="450" origin="0 -600"> -->
+			<!-- <RenderObject2D texture="data/textures/gui/square.tga" sizeX="936" sizeY="450" color="211e1dB3"/> -->
+			<!-- <!-- opposition strength --> -->
+			<!-- <Item align="t" origin="-448 -30"> -->
+				<!-- <StaticImage origin="448 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/square.tga" sizeX="936" sizeY="60" color="00000050"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticText origin="0 0"   text="@menu_m_missiongen_str" align="l" font="paragraph_2" textColor="f0e3cc"/> -->
+				<!-- <Slider 	origin="600 0" name="#RandomMap_EnemiesField"  stealFocus="true" sliderType="linear" integerValues="false" startValue="1.0" endValue="10.0" > -->
+					<!-- <BackgroundGraphics> -->
+						<!-- <RenderObject2D texture="data/textures/gui/menu_sliderbar_normal.tga"/> -->
+					<!-- </BackgroundGraphics> -->
+
+					<!-- <ButtonGraphics> -->
+						<!-- <RenderObject2D texture="data/textures/gui/menu_sliderpointer_normal.tga"/> -->
+						<!-- <OnHover> -->
+							<!-- <RenderObject2D texture="data/textures/gui/menu_sliderpointer_hover.tga"/> -->
+						<!-- </OnHover> -->
+						<!-- <OnClick> -->
+							<!-- <RenderObject2D texture="data/textures/gui/menu_sliderpointer_hover.tga"/> -->
+						<!-- </OnClick> -->
+					<!-- </ButtonGraphics> -->
+				<!-- </Slider> -->
+				<!-- <StaticText origin="816 0" name="#RandomMap_EnemiesTxt" text="0.7" font="paragraph_2" textColor="f0e3cc"/> -->
+			<!-- </Item> -->
+
+			<!-- <!-- map size --> -->
+			<!-- <Item align="t" origin="-448 -90" > -->
+				<!-- <StaticImage origin="448 0"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/square.tga" sizeX="936" sizeY="60" color="00000050"/> -->
+				<!-- </StaticImage> -->
+				<!-- <StaticText origin="0 0"   text="@menu_m_missiongen_msize" align="l" font="paragraph_2" textColor="f0e3cc"/> -->
+
+				<!-- <StaticText origin="600 0" name="#RandomMap_MapSizeTxt" text="0.7" font="paragraph_2" textColor="f0e3cc"/> -->
+
+				<!-- <Button origin="350 0" align="l" name="#RandomMap_MapSizePrev"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/menu_arrowright_normal.tga" flipX="true"/> -->
+					<!-- <OnHover> -->
+						<!-- <RenderObject2D texture="data/textures/gui/menu_arrowright_hover.tga" flipX="true"/> -->
+					<!-- </OnHover> -->
+					<!-- <OnClick> -->
+						<!-- <RenderObject2D texture="data/textures/gui/menu_arrowright_normal.tga" flipX="true"/> -->
+					<!-- </OnClick> -->
+				<!-- </Button> -->
+
+				<!-- <Button origin="850 0" align="r" name="#RandomMap_MapSizeNext"> -->
+					<!-- <RenderObject2D texture="data/textures/gui/menu_arrowright_normal.tga"/> -->
+					<!-- <OnHover> -->
+						<!-- <RenderObject2D texture="data/textures/gui/menu_arrowright_hover.tga"/> -->
+					<!-- </OnHover> -->
+					<!-- <OnClick> -->
+						<!-- <RenderObject2D texture="data/textures/gui/menu_arrowright_normal.tga"/> -->
+					<!-- </OnClick> -->
+				<!-- </Button> -->
+			<!-- </Item> -->
+
+			<!-- map -->
+			<Item align="t" origin="-448 -700" name="#RandomMap_ChooseMap" >
+				<StaticImage origin="448 0">
+					<RenderObject2D texture="data/textures/gui/square.tga" sizeX="936" sizeY="60" color="00000050"/>
+				</StaticImage>
+				<StaticText origin="0 0"   text="Debug Map" align="l" font="paragraph_2" textColor="f0e3cc"/>
+
+				<StaticText origin="600 0" name="#RandomMap_ChooseMapTxt" text="0.7" font="paragraph_2" textColor="f0e3cc"/>
+
+				<Button origin="350 0" align="l" name="#RandomMap_ChooseMapPrev">
+					<RenderObject2D texture="data/textures/gui/menu_arrowright_normal.tga" flipX="true"/>
+					<OnHover>
+						<RenderObject2D texture="data/textures/gui/menu_arrowright_hover.tga" flipX="true"/>
+					</OnHover>
+					<OnClick>
+						<RenderObject2D texture="data/textures/gui/menu_arrowright_normal.tga" flipX="true"/>
+					</OnClick>
+				</Button>
+
+				<Button origin="850 0" align="r" name="#RandomMap_ChooseMapNext">
+					<RenderObject2D texture="data/textures/gui/menu_arrowright_normal.tga"/>
+					<OnHover>
+						<RenderObject2D texture="data/textures/gui/menu_arrowright_hover.tga"/>
+					</OnHover>
+					<OnClick>
+						<RenderObject2D texture="data/textures/gui/menu_arrowright_normal.tga"/>
+					</OnClick>
+				</Button>
+			</Item>
+
+			<!-- <!-- seed --> -->
+			<!-- <StaticImage align="b" origin="0 0"> -->
+				<!-- <RenderObject2D texture="data/textures/gui/square.tga" sizeX="936" sizeY="72" color="f97b03"/> -->
+				<!-- <StaticText text="@menu_m_missiongen_seed" align="lt" origin="20 0" font="header_3" textColor="201f1b" /> -->
+			<!-- </StaticImage> -->
+			<!-- <Editbox name="#RandomMap_SeedField" origin="0 0" align="br" acceptNumbers="true" acceptLetters="true" forceUppercase="true" maxCharacters="10" focusedTextColor="f0e3cc"> -->
+				<!-- <TextFormat origin="10 0" align="l" text="#A6213774B" font="header_3" textColor="f0e3cc"/> -->
+				<!-- <RenderObject2D texture="data/textures/gui/square.tga" sizeX="270" sizeY="72" color="000000f0"/> -->
+				<!-- <OnHover> -->
+					<!-- <RenderObject2D texture="data/textures/gui/menu_darkbrown_background.tga" color="000000d2" sizeX="270" sizeY="72"/> -->
+				<!-- </OnHover> -->
+				<!-- <OnClick> -->
+					<!-- <RenderObject2D texture="data/textures/gui/menu_darkbrown_background.tga" color="000000d2" sizeX="270" sizeY="72"/> -->
+				<!-- </OnClick> -->
+				<!-- <Cursor> -->
+					<!-- <RenderObject2D texture="data/textures/gui/editbox_cursor.tga" scaleY="3"/> -->
+				<!-- </Cursor> -->
+			<!-- </Editbox> -->
+		<!-- </StaticImage> -->
+
+		<Item align="sv" origin="-334 -748">
+			<Button name="Menu_RandomMap_Start" align="rb" origin="1200 -4">
+				<ButtonText align="r" origin="-20 0" text="@menu_m_brief_go" font="header_2" textColor="f0e3cc"/>
+				<OnHover>
+					<RenderObject2D texture="data/textures/gui/button_hover_01.tga" color="f0e3cc" flipX="true"/>
+					<ButtonText align="r" origin="-20 0" text="@menu_m_brief_go" font="header_2" textColor="211e1d"/>
+				</OnHover>
+				<OnClick>
+					<RenderObject2D texture="data/textures/gui/button_hover_01.tga" color="40392b" flipX="true"/>
+					<Action type="Hide" target="Menu_MissionSelect"/>
+					<Action type="TriggerEvent" target="GUI_GAME_RANDOMMAP_START"/>
+				</OnClick>
+			</Button>
+		</Item>
+	</Item> <!-- rnd map gen -->
 </Item>
 
 <StaticImage name="#MessageBox_OK" origin="0 0" hidden="true">

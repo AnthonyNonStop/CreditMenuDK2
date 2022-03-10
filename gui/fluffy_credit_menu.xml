@@ -3,7 +3,7 @@
 	<!--
 		Colours
 		Cream = f0e3cc
-		Dark Grey 80% Opacity = 0c0b0b80
+		Dark Grey 50% Opacity = 0c0b0b80
 		Dark Grey =  0c0b0b
 		Black Backdrop = 0c0b0bbf
 		Solid Orange = f97b03
@@ -77,7 +77,7 @@
 			-->
 
 			<!-- 
-				This is where the Elements for the Background are left, This includes the Back and Original Credits Button
+				This is where the Elements for the Background are, This includes the Back and Original Credits Button
 				Its Seperated for the List of Authors and the Main Section for the Bio's
 			-->
 			<Item name="FF_Credits_Background">
@@ -171,10 +171,10 @@
 					-->
 
 					<Item name="Fluffy_Credits_Maker">
-						<Button name="Fluffy_Credits_Button" align="lb" origin="1000 -495" hidden="False" tooltip="Click me for the Github Repo">
+						<Button name="Fluffy_Credits_Button" align="lb" origin="1000 -510" hidden="False" tooltip="Click me for the Github Repo">
 							<ButtonText text="Who made this menu" font="FF_Header_3" textColor="f0e3cc"/>
 							<OnHover>
-								<ButtonText align="" origin="0 0" text="Who made this menu" font="FF_Header_3" textColor="f97b0390"/>
+								<ButtonText origin="0 0" text="Who made this menu" font="FF_Header_3" textColor="f97b03E6"/>
 								<Action type="Show" target="Fluffy_Credit_Maker_Bio"/>
 								<Action type="Hide" target="FF_Mod_Bio"/>
 							</OnHover>
@@ -183,7 +183,7 @@
 								<Action type="Show" target="FF_Mod_Bio"/>
 							</OnHoverEnd>
 							<OnClick>
-								<Action type="OpenURL" target="https://github.com/MrFlufficans/FluffyCreditMenuDK2"/>
+								<Action type="OpenURL" target="https://github.com/MrFlufficans/CreditMenuDK2"/>
 							</OnClick>
 						</Button>
 
@@ -225,7 +225,7 @@
 
 								<!-- Role 2 -->
 								<StaticImage align="lt" origin="0 -270">
-	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="60" color="0c0b0b80"/>
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="60" color="0c0b0bE6"/>
 									<StaticText origin="10 0" text="Design" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
 	    						</StaticImage>
 								
@@ -240,7 +240,7 @@
 								<!-- Role 4 -->
 								<!--
 								<StaticImage align="lt" origin="0 -390">
-	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="60" color="0c0b0b80"/>
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="60" color="0c0b0bE6"/>
 									<StaticText origin="10 0" text="4" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
 	    						</StaticImage>
 								-->
@@ -274,7 +274,7 @@
 
 								<!-- Repeat of the Above but for Github, This is Optional -->
 								<StaticImage align="lt" origin="0 -130">
-	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="60" color="0c0b0b80"/>
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="60" color="0c0b0bE6"/>
 									<StaticText origin="55 0" text="MrFlufficans" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
 	    						</StaticImage>
 								<StaticImage align="lt" origin="5 -138">
@@ -303,7 +303,7 @@
 				
 				<!-- Main Helper for UI Origin -->
 				<StaticImage align="lt" origin="0 500">
-	    			<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1500" sizeY="920" color="f0e3cc40"/>
+	    			<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1500" sizeY="920" color="f0e3cc66"/>
 	    		</StaticImage>
 				
 				<!-- Item for the Mod Bio Header, Name and Top Bar -->
@@ -329,7 +329,7 @@
 					<Button>
 						<ButtonText align="" origin="0 0" text="TemplatePerson1" font="FF_Description_3" textColor="f0e3cc"/>
 						<OnHover>
-							<ButtonText align="" origin="0 0" text="TemplatePerson1" font="FF_Description_3" textColor="f97b0390"/>
+							<ButtonText align="" origin="0 0" text="TemplatePerson1" font="FF_Description_3" textColor="f97b03E6"/>
 							<Action type="Show" target="FF_Template_Bio1"/>
 							<Action type="Hide" target="FF_Mod_Bio"/>
 						</OnHover>
@@ -344,7 +344,7 @@
 					<Button>
 						<ButtonText align="" origin="0 0" text="TemplatePerson2" font="FF_Description_3" textColor="f0e3cc"/>
 						<OnHover>
-							<ButtonText align="" origin="0 0" text="TemplatePerson2" font="FF_Description_3" textColor="f97b0390"/>
+							<ButtonText align="" origin="0 0" text="TemplatePerson2" font="FF_Description_3" textColor="f97b03E6"/>
 							<Action type="Show" target="FF_Template_Bio2"/>
 							<Action type="Hide" target="FF_Mod_Bio"/>
 						</OnHover>
