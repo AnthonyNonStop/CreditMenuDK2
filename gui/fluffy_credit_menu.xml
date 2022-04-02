@@ -3,7 +3,7 @@
 	<!--
 		Colours
 		Cream = f0e3cc
-		Dark Grey 80% Opacity = 0c0b0b80
+		Dark Grey 50% Opacity = 0c0b0b80
 		Dark Grey =  0c0b0b
 		Black Backdrop = 0c0b0bbf
 		Solid Orange = f97b03
@@ -77,28 +77,29 @@
 			-->
 
 			<!-- 
-				This is where the Elements for the Background are left, This includes the Back and Original Credits Button
+				This is where the Elements for the Background are, This includes the Back and Original Credits Button
 				Its Seperated for the List of Authors and the Main Section for the Bio's
 			-->
 			<Item name="FF_Credits_Background">
 				
 				<Item name="Backdrop List" origin="-900 0">
+					
+					<!-- Body -->
 					<StaticImage origin="0 500" align="t"> 
 	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="350" sizeY="920" color="0c0b0bbf"/>
 	    			</StaticImage>
 					
+					<!-- Header -->
 					<StaticImage origin="0 500" align="t">
 						<RenderObject2D texture="data/textures/gui/square.tga" sizeX="350" sizeY="80" color="f97b03"/>
 					</StaticImage>
-
-					<StaticImage origin="0 -500" align="b">
-	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="350" sizeY="80" color="0c0b0bbf"/>
-	    			</StaticImage>
-					<StaticImage origin="0 -500" align="b">
-	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="350" sizeY="80" color="0c0b0bbf"/>
-	    			</StaticImage>
-
 					<StaticText name="FF_Author_List" origin="0 495" text="MOD AUTHORS" align="tc" font="FF_Header_3" textColor="201f1b"/>
+					
+					<!-- Footer -->
+					<StaticImage origin="0 -500" align="b">
+	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="350" sizeY="80" color="0c0b0bCC"/>
+	    			</StaticImage>
+
 
 					<!-- Back to Main Menu Button -->
 					<Button name="FF_Credits_Back" align="l" origin="0 -490">
@@ -121,25 +122,22 @@
 					<StaticImage align="l" hidden="true">
 	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1500" sizeY="1000" color="0c0b0bbf"/>
 	    			</StaticImage>
-
-					<!-- These Two are indentical it just doubles up the Bottom Bar -->
-					<StaticImage origin="0 -500" align="lb">
-	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1500" sizeY="80" color="0c0b0bbf"/>
-	    			</StaticImage>
-					<StaticImage origin="0 -500" align="lb">
-	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1500" sizeY="80" color="0c0b0bbf"/>
-	    			</StaticImage>
-
+					
 					<!-- Why is this Here? I'm Hiding it for now -->
 					<StaticImage align="lt" origin="0 500" hidden="true">
 	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="80" color="f97b03"/>
+	    			</StaticImage>
+
+					<!-- Footer -->
+					<StaticImage origin="0 -500" align="lb">
+	    				<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1500" sizeY="80" color="0c0b0bCC"/>
 	    			</StaticImage>
 
 					<!-- 
 						Button to go to the Killhouse Credits, Please Don't Remove this
 						I put this here because I feel it was the right thing to do
 					-->
-					<Button name="FF_GoTo_Real_Credits" align="lb" origin="30 -490" hidden="False" tooltip="Original Killhouse Games Credits">
+					<Button name="FF_GoTo_Original_Credits" align="lb" origin="30 -490" hidden="False" tooltip="Original Killhouse Games Credits">
 						<ButtonText text="ORIGINAL CREDITS" font="FF_Header_3" textColor="f0e3cc"/>
 						<RenderObject2D texture="data/textures/gui/deploy/deploy_squad.dds" sizeX="420" sizeY="60" color="211e1d00" flipX="false"/>
 						<OnHover>
@@ -171,10 +169,10 @@
 					-->
 
 					<Item name="Fluffy_Credits_Maker">
-						<Button name="Fluffy_Credits_Button" align="lb" origin="1000 -495" hidden="False" tooltip="Click me for the Github Repo">
+						<Button name="Fluffy_Credits_Button" align="lb" origin="1000 -510" hidden="False" tooltip="Click me for the Github Repo">
 							<ButtonText text="Who made this menu" font="FF_Header_3" textColor="f0e3cc"/>
 							<OnHover>
-								<ButtonText align="" origin="0 0" text="Who made this menu" font="FF_Header_3" textColor="f97b0390"/>
+								<ButtonText origin="0 0" text="Who made this menu" font="FF_Header_3" textColor="f97b03E6"/>
 								<Action type="Show" target="Fluffy_Credit_Maker_Bio"/>
 								<Action type="Hide" target="FF_Mod_Bio"/>
 							</OnHover>
@@ -183,7 +181,7 @@
 								<Action type="Show" target="FF_Mod_Bio"/>
 							</OnHoverEnd>
 							<OnClick>
-								<Action type="OpenURL" target="https://github.com/MrFlufficans/FluffyCreditMenuDK2"/>
+								<Action type="OpenURL" target="https://github.com/MrFlufficans/CreditMenuDK2"/>
 							</OnClick>
 						</Button>
 
@@ -201,7 +199,7 @@
 								<!-- Pretty Much this Whole Section is the Checker Pattern that Alternates including the Text for the Headers -->
 								<!-- Name Header -->
 								<StaticImage align="lt">
-	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="70" color="0c0b0bbf"/>
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="70" color="0c0b0bE6"/>
 									<StaticText origin="12 0" text="Name" align="lt" font="FF_Header_3" textColor="f97b03"/>
 	    						</StaticImage>
 
@@ -213,7 +211,7 @@
 
 								<!-- Role Header Followed by Role(s) -->
 								<StaticImage align="lt" origin="0 -140">
-	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="70" color="0c0b0bbf"/>
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="70" color="0c0b0bE6"/>
 									<StaticText origin="12 0" text="Roles" align="lt" font="FF_Header_3" textColor="f97b03"/>
 	    						</StaticImage>
 
@@ -225,7 +223,7 @@
 
 								<!-- Role 2 -->
 								<StaticImage align="lt" origin="0 -270">
-	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="60" color="0c0b0b80"/>
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="60" color="201f1b"/>
 									<StaticText origin="10 0" text="Design" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
 	    						</StaticImage>
 								
@@ -240,7 +238,7 @@
 								<!-- Role 4 -->
 								<!--
 								<StaticImage align="lt" origin="0 -390">
-	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="60" color="0c0b0b80"/>
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="60" color="201f1b"/>
 									<StaticText origin="10 0" text="4" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
 	    						</StaticImage>
 								-->
@@ -255,11 +253,11 @@
 								10 3 Roles
 								-50 4 Roles
 							-->
-							<Item name="Fluffy_Contact" origin="0 70">
+							<Item name="Fluffy_Contact" origin="0 70"> <!-- This Origin is what I am refering to -->
 								
 								<!-- Contact Header -->
 								<StaticImage align="lt" origin="0 0">
-	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="70" color="0c0b0bbf"/>
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="70" color="0c0b0bE6"/>
 									<StaticText origin="12 0" text="Contact" align="lt" font="FF_Header_3" textColor="f97b03"/>
 	    						</StaticImage>
 
@@ -274,7 +272,7 @@
 
 								<!-- Repeat of the Above but for Github, This is Optional -->
 								<StaticImage align="lt" origin="0 -130">
-	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="60" color="0c0b0b80"/>
+	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="440" sizeY="60" color="201f1b"/>
 									<StaticText origin="55 0" text="MrFlufficans" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
 	    						</StaticImage>
 								<StaticImage align="lt" origin="5 -138">
@@ -282,15 +280,17 @@
 								</StaticImage>
 							</Item>
 
-							<Item name="Fluffy_Contribution" hidden="true">
-								<StaticImage align="lt" origin="200 500">
+							<Item name="Fluffy_Contribution" origin="0 -140" hidden="false">
+								<StaticImage align="lt" origin="0 0">
 	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="50" sizeY="50" color="f97b03"/>
+									<StaticText origin="0 0" text="1" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
 	    						</StaticImage>
 							</Item>
 
-							<Item name="Fluffy_WorkExample" hidden="true">
-								<StaticImage align="lt" origin="300 500">
+							<Item name="Fluffy_WorkExample" origin="100 70" hidden="true">
+								<StaticImage align="lt" origin="0 -200">
 	    							<RenderObject2D texture="data/textures/gui/square.tga" sizeX="50" sizeY="50" color="f97b03"/>
+									<StaticText origin="0 0" text="2" align="lt" font="FF_Description_3" textColor="f0e3cc"/>
 	    						</StaticImage>
 							</Item>
 						</Item>
@@ -303,7 +303,7 @@
 				
 				<!-- Main Helper for UI Origin -->
 				<StaticImage align="lt" origin="0 500">
-	    			<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1500" sizeY="920" color="f0e3cc40"/>
+	    			<RenderObject2D texture="data/textures/gui/square.tga" sizeX="1500" sizeY="920" color="f0e3cc66"/>
 	    		</StaticImage>
 				
 				<!-- Item for the Mod Bio Header, Name and Top Bar -->
@@ -329,7 +329,7 @@
 					<Button>
 						<ButtonText align="" origin="0 0" text="TemplatePerson1" font="FF_Description_3" textColor="f0e3cc"/>
 						<OnHover>
-							<ButtonText align="" origin="0 0" text="TemplatePerson1" font="FF_Description_3" textColor="f97b0390"/>
+							<ButtonText align="" origin="0 0" text="TemplatePerson1" font="FF_Description_3" textColor="f97b03E6"/>
 							<Action type="Show" target="FF_Template_Bio1"/>
 							<Action type="Hide" target="FF_Mod_Bio"/>
 						</OnHover>
@@ -344,7 +344,7 @@
 					<Button>
 						<ButtonText align="" origin="0 0" text="TemplatePerson2" font="FF_Description_3" textColor="f0e3cc"/>
 						<OnHover>
-							<ButtonText align="" origin="0 0" text="TemplatePerson2" font="FF_Description_3" textColor="f97b0390"/>
+							<ButtonText align="" origin="0 0" text="TemplatePerson2" font="FF_Description_3" textColor="f97b03E6"/>
 							<Action type="Show" target="FF_Template_Bio2"/>
 							<Action type="Hide" target="FF_Mod_Bio"/>
 						</OnHover>
