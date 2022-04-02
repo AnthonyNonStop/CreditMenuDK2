@@ -101,7 +101,7 @@
 					<StaticText name="FF_Author_List" origin="0 495" text="MOD AUTHORS" align="tc" font="FF_Header_3" textColor="201f1b"/>
 
 					<!-- Back to Main Menu Button -->
-					<Button name="FF_Credits_Back" align="b" origin="0 -490">
+					<Button name="FF_Credits_Back" align="l" origin="0 -490">
 						<ButtonText align="" origin="0 0" text="@menu_generic_back" font="FF_Header_3" textColor="f0e3cc"/>
 						<RenderObject2D texture="data/textures/gui/deploy/deploy_squad.dds" sizeX="280" sizeY="60" color="211e1d00" flipX="false"/>
 						<OnHover>
